@@ -1,11 +1,10 @@
 import 'package:get/state_manager.dart';
+import 'package:robbinlaw/models/count.dart';
 
 class CountController extends GetxController {
-  int count = 0; //no need for .obs
-
+  Rx<CounterModel> _counterModelStream = Rx<CounterModel>();
+  int get count => _counterModelStream.value.count;
   void increment() {
-    count++;
-    // use update method to update all count variables
-    update();
+    _counterModelStream.value.increment();
   }
 }

@@ -4,8 +4,8 @@ import 'package:robbinlaw/controllers/countController.dart';
 import 'package:robbinlaw/controllers/userController.dart';
 import 'package:robbinlaw/screens/second.dart';
 
-class First extends StatelessWidget {
-  final CountController countController = Get.put(CountController());
+class Root extends StatelessWidget {
+  //final CountController countController = Get.put(CountController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,9 +16,8 @@ class First extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GetBuilder<CountController>(
-              // You can initialize your controller here the first time. Don't use init in your other GetBuilders of same controller
-              // GetX/Obx is reactive (streams) while GetBuilder only rebuilds on update()
+            GetX<CountController>(
+              initState: (_) {},
               builder: (s) => Text(
                 'Current Count Value: ${s.count}',
               ),
@@ -27,13 +26,13 @@ class First extends StatelessWidget {
               height: 40,
             ),
             GetX<UserController>(
-              init:
-                  UserController(), // can initialize inside GetX instead of .put
+              initState: (_) {},
+              //UserController(), // can initialize inside GetX instead of .put
               builder: (_) => Text('Name: ${_.user.value.name}'),
             ),
-            Obx(
-              //Obx is very similar to GetX except 'lighter' so no parameters for init, dispose, etc
-              () => Text(
+            GetX<CountController>(
+              initState: (_) {},
+              builder: (_) => Text(
                   'Stored Count: ${Get.find<UserController>().user.value.count}'),
             ),
             SizedBox(

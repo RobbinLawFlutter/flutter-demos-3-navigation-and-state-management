@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:robbinlaw/controllers/sumController.dart';
 
 class Second extends StatelessWidget {
-  final SumController sumController = Get.put(SumController());
+  //final SumController sumController = Get.put(SumController());
 
   @override
   Widget build(BuildContext context) {
@@ -50,13 +50,13 @@ class Second extends StatelessWidget {
             RaisedButton(
               child: Text("Increment Counter #1"),
               onPressed: () {
-                sumController.increment();
+                //_.increment();
               },
             ),
             RaisedButton(
               child: Text("Increment Counter #2"),
               onPressed: () {
-                sumController.increment2();
+                //_.increment2();
               },
             ),
           ],
