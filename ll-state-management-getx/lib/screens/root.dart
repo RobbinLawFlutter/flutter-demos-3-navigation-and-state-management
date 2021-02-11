@@ -4,10 +4,11 @@ import 'package:robbinlaw/controllers/countController.dart';
 import 'package:robbinlaw/controllers/userController.dart';
 import 'package:robbinlaw/screens/second.dart';
 
-class Root extends StatelessWidget {
+class Root extends GetWidget<CountController> {
   //final CountController countController = Get.put(CountController());
   @override
   Widget build(BuildContext context) {
+    print('Root build');
     return Scaffold(
       appBar: AppBar(
         title: Text("GetX | State Management"),
@@ -18,10 +19,14 @@ class Root extends StatelessWidget {
           children: [
             GetX<CountController>(
               initState: (_) {},
-              builder: (_) => Text(
-                //'hi',
-                'Current Count Value: ${_.counter}',
-              ),
+              builder: (_) {
+                print('Root GetX<CountController> builder: ');
+                return Text(
+                  'Current Count Value: ${controller.counter.count}',
+                  //'Current Count Value: ${Get.find<CountController>().counter.count}',
+                  //'Current Count Value: ${_.counter.count}',
+                );
+              },
             ),
             SizedBox(
               height: 40,

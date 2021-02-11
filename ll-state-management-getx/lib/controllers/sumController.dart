@@ -28,6 +28,9 @@ class SumController extends GetxController {
   /// Here is an outline of how you can use them:
   @override
   onInit() {
+    super.onInit();
+    print('SumController onInit:');
+
     /// Called every time the variable $_ is changed
     ever(_counter1, (_) => print("$_ has been changed"));
 
