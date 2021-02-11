@@ -21,7 +21,7 @@ class Second extends StatelessWidget {
               builder: (_) {
                 print("count1 rebuild");
                 return Text(
-                  'Counter #1:    ${_.counter1.count}',
+                  'Counter #1:    ${_.counter1?.count}',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 );
               },
@@ -31,7 +31,7 @@ class Second extends StatelessWidget {
               builder: (_) {
                 print("count2 rebuild");
                 return Text(
-                  'Counter #2:    ${_.counter2.count}',
+                  'Counter #2:    ${_.counter2?.count}',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 );
               },
@@ -50,12 +50,14 @@ class Second extends StatelessWidget {
             RaisedButton(
               child: Text("Increment Counter #1"),
               onPressed: () {
+                Get.find<SumController>().increment();
                 //_.increment();
               },
             ),
             RaisedButton(
               child: Text("Increment Counter #2"),
               onPressed: () {
+                Get.find<SumController>().increment2();
                 //_.increment2();
               },
             ),

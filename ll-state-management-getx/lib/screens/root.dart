@@ -28,7 +28,6 @@ class Root extends StatelessWidget {
             ),
             GetX<UserController>(
               initState: (_) {},
-              //UserController(), // can initialize inside GetX instead of .put
               builder: (_) => Text('Name: ${_.user?.name}'),
             ),
             GetX<CountController>(
@@ -42,8 +41,8 @@ class Root extends StatelessWidget {
             RaisedButton(
               child: Text("Update Name & Stored Count"),
               onPressed: () {
-                // Get.find<UserController>()
-                //     .updateUser(Get.find<CountController>().count);
+                Get.find<UserController>()
+                    .updateUser(Get.find<CountController>().counter.count);
               },
             ),
             SizedBox(
@@ -61,7 +60,7 @@ class Root extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           onPressed: () {
-            //Get.find<CountController>().increment();
+            Get.find<CountController>().increment();
           }),
     );
   }

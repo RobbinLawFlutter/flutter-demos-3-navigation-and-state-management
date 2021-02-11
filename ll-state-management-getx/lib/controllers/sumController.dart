@@ -8,7 +8,12 @@ class SumController extends GetxController {
   Rx<CounterModel> _counter2 = Rx<CounterModel>();
   CounterModel get counter2 => this._counter2.value;
   set counter2(CounterModel value) => this._counter2.value = value;
-  int get sum => counter1.count + counter2.count;
+  int get sum {
+    if (counter1 == null || counter2 == null)
+      return 0;
+    else
+      return counter1.count + counter2.count;
+  }
 
   increment() => counter1.count++;
 
