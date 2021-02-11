@@ -1,14 +1,18 @@
 import 'package:get/state_manager.dart';
+import 'package:robbinlaw/models/count.dart';
 
 class SumController extends GetxController {
-  final count1 = 0.obs;
-  final count2 = 0.obs;
+  Rx<CounterModel> _counter1 = Rx<CounterModel>();
+  CounterModel get counter1 => this._counter1.value;
+  set counter1(CounterModel value) => this._counter1.value = value;
+  Rx<CounterModel> _counter2 = Rx<CounterModel>();
+  CounterModel get counter2 => this._counter2.value;
+  set counter2(CounterModel value) => this._counter2.value = value;
+  int get sum => counter1.count + counter2.count;
 
-  int get sum => count1.value + count2.value;
+  increment() => counter1.count++;
 
-  increment() => count1.value++;
-
-  increment2() => count2.value++;
+  increment2() => counter2.count++;
 
   /// Once the controller has entered memory, onInit will be called.
   /// It is preferable to use onInit instead of class constructors or initState method.
@@ -20,15 +24,16 @@ class SumController extends GetxController {
   @override
   onInit() {
     /// Called every time the variable $_ is changed
-    ever(count1, (_) => print("$_ has been changed"));
+    ever(_counter1, (_) => print("$_ has been changed"));
 
     /// Called first time the variable $_ is changed
-    once(count1, (_) => print("$_ was changed once"));
+    once(_counter1, (_) => print("$_ was changed once"));
 
     /// Called once there has been no action on observable for 1 second
-    debounce(count1, (_) => print("debouce$_"), time: Duration(seconds: 1));
+    debounce(_counter1, (_) => print("debouce$_"), time: Duration(seconds: 1));
 
     /// Only reads the observable every 1 second
-    interval(count1, (_) => print("interval $_"), time: Duration(seconds: 1));
+    interval(_counter1, (_) => print("interval $_"),
+        time: Duration(seconds: 1));
   }
 }

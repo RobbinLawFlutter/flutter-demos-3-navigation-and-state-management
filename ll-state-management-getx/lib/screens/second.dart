@@ -21,7 +21,7 @@ class Second extends StatelessWidget {
               builder: (_) {
                 print("count1 rebuild");
                 return Text(
-                  'Counter #1:    ${_.count1.value}',
+                  'Counter #1:    ${_.counter1.count}',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 );
               },
@@ -31,7 +31,7 @@ class Second extends StatelessWidget {
               builder: (_) {
                 print("count2 rebuild");
                 return Text(
-                  'Counter #2:    ${_.count2.value}',
+                  'Counter #2:    ${_.counter2.count}',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 );
               },
