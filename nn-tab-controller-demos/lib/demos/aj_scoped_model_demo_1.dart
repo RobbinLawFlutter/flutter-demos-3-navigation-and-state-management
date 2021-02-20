@@ -36,11 +36,7 @@ class MyCounterModel extends Model {
 }
 
 class MyScopedModelDemo1 extends StatelessWidget {
-  MyScopedModelDemo1({@required this.myModel, this.title, this.color});
-
-  final MyCounterModel myModel;
-  final String title;
-  final Color color;
+  final MyCounterModel myModel = MyCounterModel();
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +48,7 @@ class MyScopedModelDemo1 extends StatelessWidget {
         model: myModel,
         child: Scaffold(
           appBar: AppBar(
-            title: Text(title),
+            title: Text('Scoped-Model Demo 1'),
           ),
           body: Center(
             child: Column(
@@ -91,7 +87,7 @@ class MyScopedModelDemo1 extends StatelessWidget {
           floatingActionButton: ScopedModelDescendant<MyCounterModel>(
             builder: (contextParm, childParm, modelParm) {
               return FloatingActionButton(
-                backgroundColor: Colors.black,
+                //backgroundColor: Colors.black,
                 //Address of the model.increment method from the
                 //MyCounterModel class.
                 onPressed: modelParm.increment,

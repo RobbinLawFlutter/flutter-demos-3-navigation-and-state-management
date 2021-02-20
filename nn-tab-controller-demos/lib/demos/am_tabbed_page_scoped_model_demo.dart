@@ -13,11 +13,6 @@ import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class MyTabbedScopedModelDemo extends StatelessWidget {
-  const MyTabbedScopedModelDemo({this.title, this.color});
-
-  final String title;
-  final Color color;
-
   @override
   Widget build(BuildContext context) {
     //ScopedModel is the top level widget of this
@@ -30,11 +25,11 @@ class MyTabbedScopedModelDemo extends StatelessWidget {
       child: Scaffold(
         //backgroundColor: color,
         appBar: AppBar(
-          title: Text(title),
+          title: Text('Tab and Scoped-Model Demo'),
         ),
         body: Column(
           children: <Widget>[
-            NumbersCarousel(color: color),
+            NumbersCarousel(color: Colors.blue),
             NumbersList(),
           ],
         ),

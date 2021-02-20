@@ -20,11 +20,6 @@ class MyScopedCounter extends Model {
 }
 
 class MyScopedModelDemo2 extends StatelessWidget {
-  MyScopedModelDemo2({this.title, this.color});
-
-  final String title;
-  final Color color;
-
   final MyScopedCounter myScopedCounter = MyScopedCounter();
 
   @override
@@ -33,7 +28,7 @@ class MyScopedModelDemo2 extends StatelessWidget {
       model: myScopedCounter,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: Text('Scoped-Model Demo 2'),
         ),
         body: Center(
           child: Column(
@@ -46,7 +41,7 @@ class MyScopedModelDemo2 extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.black,
+          //backgroundColor: Colors.black,
           onPressed: () => myScopedCounter.increment(),
           tooltip: 'Increment',
           child: Icon(Icons.add),

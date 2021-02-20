@@ -8,10 +8,6 @@
 import 'package:flutter/material.dart';
 
 class MyTabbedDemo3 extends StatefulWidget {
-  MyTabbedDemo3({this.title});
-
-  final String title;
-
   @override
   _MyTabbedDemo3State createState() => _MyTabbedDemo3State();
 }
@@ -33,16 +29,8 @@ class _MyTabbedDemo3State extends State<MyTabbedDemo3>
     super.dispose();
   }
 
-  void _nextPage(int delta) {
-    final int newIndex = _tabController.index + delta;
-
-    if (newIndex < 0 || newIndex > _tabController.length - 1) return;
-    _tabController.animateTo(newIndex);
-  }
-
   @override
   Widget build(BuildContext context) {
-    String myTitle = widget.title;
     final TextStyle textStyle = Theme.of(context).textTheme.headline2;
     return Scaffold(
       appBar: AppBar(
@@ -53,7 +41,7 @@ class _MyTabbedDemo3State extends State<MyTabbedDemo3>
             _nextPage(-1);
           },
         ),
-        title: Text(myTitle),
+        title: Text('Tab Demo 3'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.arrow_forward),
@@ -71,7 +59,7 @@ class _MyTabbedDemo3State extends State<MyTabbedDemo3>
             alignment: Alignment.center,
             child: TabPageSelector(
               controller: _tabController,
-              color: Colors.white,
+              //color: Colors.white,
               selectedColor: textStyle.color,
             ),
           ),
@@ -89,6 +77,13 @@ class _MyTabbedDemo3State extends State<MyTabbedDemo3>
         }).toList(),
       ),
     );
+  }
+
+  void _nextPage(int delta) {
+    final int newIndex = _tabController.index + delta;
+
+    if (newIndex < 0 || newIndex > _tabController.length - 1) return;
+    _tabController.animateTo(newIndex);
   }
 }
 
@@ -117,7 +112,7 @@ class ChoiceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextStyle textStyle = Theme.of(context).textTheme.headline2;
     return Card(
-      color: Colors.white,
+      //color: Colors.white,
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
