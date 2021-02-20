@@ -12,11 +12,9 @@ import 'package:robbinlaw/demos/ae_tabbed_page_demo_2.dart';
 import 'package:robbinlaw/demos/ag_tabbed_page_demo_3.dart';
 import 'package:robbinlaw/demos/aj_scoped_model_demo_1.dart';
 import 'package:robbinlaw/demos/ak_scoped_model_demo_2.dart';
-import 'package:robbinlaw/demos/ay_AlertDialog_SnackBar_Demo.dart';
 import 'package:robbinlaw/demos/am_tabbed_page_scoped_model_demo.dart';
+import 'package:robbinlaw/demos/ay_AlertDialog_SnackBar_Demo.dart';
 
-//don't need 'Get' before Material App if you're only using State Management
-//but we will also use Get for Navigation Management so we will need it.
 void main() {
   runApp(MyApp());
 }
