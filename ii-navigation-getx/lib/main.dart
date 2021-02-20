@@ -14,10 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: HomeView(),
-      theme: ThemeData(
-          //accentColor: Colors.purpleAccent,
-          //primaryColor: Colors.purple,
-          ),
+      theme: ThemeData(),
       getPages: [
         GetPage(
           name: '/',
