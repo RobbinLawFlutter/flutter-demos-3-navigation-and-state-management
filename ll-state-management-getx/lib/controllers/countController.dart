@@ -14,7 +14,7 @@ class CountController extends GetxController {
     print('CountController onInit:');
     _counterModelStream.value = CounterModel();
     _counterModelStream.update((val) {
-      val.count = 4;
+      val.count = 0;
     });
 
     /// Called every time the variable $_ is changed

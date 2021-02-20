@@ -1,89 +1,73 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:robbinlaw/views/second.dart';
+import 'package:robbinlaw/controllers/sumController.dart';
 
 class ThirdView extends StatelessWidget {
-  goToNext() {
-    //Navigator.push(context, MaterialPageRoute(builder: (context)=>Second()));
-    navigator.push(MaterialPageRoute(builder: (context) => SecondView()));
-    //Get.to(Second());
-  }
-
-  _showSnackBar() {
-    Get.snackbar(
-      "Hey There",
-      "Snackbar is easy",
-      snackPosition: SnackPosition.BOTTOM,
-    );
-  }
-
-  _showDialog() {
-    Get.defaultDialog(
-      title: "Simple Dialog",
-      content: Text("Too Easy"),
-    );
-  }
-
-  _showBottomSheet() {
-    Get.bottomSheet(
-      Container(
-        child: Wrap(
-          children: <Widget>[
-            ListTile(
-                leading: Icon(Icons.music_note),
-                title: Text('Music'),
-                onTap: () => {}),
-            ListTile(
-              leading: Icon(Icons.videocam),
-              title: Text('Video'),
-              onTap: () => {},
-            ),
-            SizedBox(
-              height: 100,
-            ),
-          ],
-        ),
-      ),
-      backgroundColor: Colors.white,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Get Package | Home"),
-        centerTitle: true,
+        title: Text('Third View'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(
-              child: Text("Go To Second"),
-              onPressed: () => goToNext(),
+          children: [
+            GetX<SumController>(
+              //You can use bindings instead of init. Bindings are when this widget gets
+              //rendered, you can create your Controller
+              builder: (_) {
+                print("count1 rebuild");
+                return Text(
+                  'Counter #1:    ${_.counter1?.count}',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                );
+              },
             ),
-            RaisedButton(
-              child: Text("Snackbar"),
-              onPressed: _showSnackBar,
+            Text("                        +"),
+            GetX<SumController>(
+              builder: (_) {
+                print("count2 rebuild");
+                return Text(
+                  'Counter #2:    ${_.counter2?.count}',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                );
+              },
             ),
-            RaisedButton(
-              child: Text("Dialog"),
-              onPressed: _showDialog,
+            Text("                        ="),
+            GetX<SumController>(builder: (_) {
+              print("sum rebuild");
+              return Text(
+                'Sum:                 ${_.sum}',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              );
+            }),
+            SizedBox(
+              height: 40,
             ),
-            RaisedButton(
-              child: Text("Bottom Sheet"),
-              onPressed: _showBottomSheet,
+            ElevatedButton(
+              child: Text("Increment Counter #1"),
+              onPressed: () {
+                Get.find<SumController>().increment();
+                //_.increment();
+              },
+            ),
+            ElevatedButton(
+              child: Text("Increment Counter #2"),
+              onPressed: () {
+                Get.find<SumController>().increment2();
+                //_.increment2();
+              },
             ),
             SizedBox(
               height: 40,
             ),
-            RaisedButton(
-              child: Text("Name Route: /second"),
+            ElevatedButton(
+              child: Text('Go to Previous View'),
               onPressed: () {
-                Get.toNamed("/second");
+                Get.back();
               },
-            )
+            ),
           ],
         ),
       ),

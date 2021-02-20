@@ -1,62 +1,77 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:robbinlaw/controllers/sumController.dart';
+import 'package:robbinlaw/controllers/countController.dart';
+import 'package:robbinlaw/controllers/userController.dart';
+import 'package:robbinlaw/views/third.dart';
 
 class SecondView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print('SecondView build');
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second View'),
+        title: Text("Second View"),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GetX<SumController>(
-              //You can use bindings instead of init. Bindings are when this widget gets
-              //rendered, you can create your Controller
+            GetX<CountController>(
+              initState: (_) {},
               builder: (_) {
-                print("count1 rebuild");
+                print('SecondView GetX<CountController> builder: ');
                 return Text(
-                  'Counter #1:    ${_.counter1?.count}',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  'Current Counter Value: ${_.counter.count}',
                 );
               },
             ),
-            Text("                        +"),
-            GetX<SumController>(
-              builder: (_) {
-                print("count2 rebuild");
-                return Text(
-                  'Counter #2:    ${_.counter2?.count}',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                );
-              },
-            ),
-            Text("                        ="),
-            GetX<SumController>(builder: (_) {
-              print("sum rebuild");
-              return Text(
-                'Sum:                 ${_.sum}',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              );
-            }),
             SizedBox(
-              height: 40,
+              height: 10,
             ),
-            RaisedButton(
-              child: Text("Increment Counter #1"),
+            ElevatedButton(
+              child: Text("Increment Counter"),
               onPressed: () {
-                Get.find<SumController>().increment();
-                //_.increment();
+                Get.find<CountController>().increment();
               },
             ),
-            RaisedButton(
-              child: Text("Increment Counter #2"),
+            SizedBox(
+              height: 20,
+            ),
+            GetX<UserController>(
+              initState: (_) {},
+              builder: (_) {
+                print('SecondView GetX<UserController> builder: ');
+                return Column(children: [
+                  Text('User Name: ${_.user?.name}'),
+                  Text('User Count: ${Get.find<UserController>().user?.count}'),
+                ]);
+              },
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              child: Text("Update User Name & Count"),
               onPressed: () {
-                Get.find<SumController>().increment2();
-                //_.increment2();
+                Get.find<UserController>().updateUser(
+                    name: 'Second View User Name',
+                    count: Get.find<CountController>().counter.count);
+              },
+            ),
+            SizedBox(
+              height: 100,
+            ),
+            ElevatedButton(
+              child: Text('Go to Third View'),
+              onPressed: () {
+                Get.to(ThirdView());
+              },
+            ),
+            ElevatedButton(
+              child: Text('Go to Previous View'),
+              onPressed: () {
+                Get.back();
               },
             ),
           ],

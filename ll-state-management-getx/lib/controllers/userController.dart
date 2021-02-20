@@ -12,8 +12,8 @@ class UserController extends GetxController {
     print('UserController onInit:');
     _userStream.value = UserModel();
     _userStream.update((val) {
-      val.name = 'OnInit Name';
-      val.count = 2;
+      val.name = 'OnInit User Name';
+      val.count = 0;
     });
 
     // Called every time the variable $_ is changed

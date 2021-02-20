@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:robbinlaw/controllers/countController.dart';
 import 'package:robbinlaw/controllers/userController.dart';
+import 'package:robbinlaw/views/home.dart';
 import 'package:robbinlaw/views/second.dart';
+import 'package:robbinlaw/views/third.dart';
 
 class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print('Root build');
+    print('HomeView build');
     return Scaffold(
       appBar: AppBar(
         title: Text("GetX | Home View"),
@@ -29,7 +31,7 @@ class HomeView extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Increment Counter"),
               onPressed: () {
                 Get.find<CountController>().increment();
@@ -51,21 +53,27 @@ class HomeView extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Update User Name & Count"),
               onPressed: () {
                 Get.find<UserController>().updateUser(
-                    name: 'Robbin',
+                    name: 'Home View User Name',
                     count: Get.find<CountController>().counter.count);
               },
             ),
             SizedBox(
               height: 100,
             ),
-            RaisedButton(
-              child: Text('Next Screen'),
+            ElevatedButton(
+              child: Text('Go to Second View'),
               onPressed: () {
                 Get.to(SecondView());
+              },
+            ),
+            ElevatedButton(
+              child: Text('Go to Third View'),
+              onPressed: () {
+                Get.to(ThirdView());
               },
             ),
           ],
