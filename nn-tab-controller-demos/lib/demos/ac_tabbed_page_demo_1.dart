@@ -8,10 +8,6 @@
 import 'package:flutter/material.dart';
 
 class MyTabbedDemo1 extends StatefulWidget {
-  MyTabbedDemo1({this.title});
-
-  final String title;
-
   @override
   _MyTabbedDemo1State createState() => _MyTabbedDemo1State();
 }
@@ -19,16 +15,13 @@ class MyTabbedDemo1 extends StatefulWidget {
 class _MyTabbedDemo1State extends State<MyTabbedDemo1> {
   @override
   Widget build(BuildContext context) {
-    //This demonstrates how to pass parms down from
-    //the imutable widget to the mutable one.
-    String myTitle = widget.title;
     //The use of the DefaultTabController does some
     //simple animation automatically.
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(myTitle),
+          title: Text('Tab Demo 1'),
           bottom: TabBar(
             //The tabs property must be a list<Tab>.
             tabs: [

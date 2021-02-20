@@ -18,10 +18,6 @@
 import 'package:flutter/material.dart';
 
 class MyTabbedDemo2 extends StatefulWidget {
-  MyTabbedDemo2({this.title});
-
-  final String title;
-
   @override
   _MyTabbedDemo2State createState() => _MyTabbedDemo2State();
 }
@@ -53,11 +49,9 @@ class _MyTabbedDemo2State extends State<MyTabbedDemo2>
 
   @override
   Widget build(BuildContext context) {
-    String myTitle = widget.title;
-
     return Scaffold(
       appBar: AppBar(
-        title: Text(myTitle),
+        title: Text('Tab Demo 2'),
         bottom: TabBar(
           //This TabBar uses the TabController.
           controller: _tabController,

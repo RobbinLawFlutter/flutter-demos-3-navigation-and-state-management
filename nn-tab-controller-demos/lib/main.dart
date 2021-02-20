@@ -29,8 +29,8 @@ class MyApp extends StatelessWidget {
       //dependancy injection via Bindings().
       initialBinding: GlobalBindings(),
       //home: HomeView(),
-      home: MyTabbedDemo1(),
-      // home: MyTabbedDemo2(),
+      //home: MyTabbedDemo1(),
+      home: MyTabbedDemo2(),
       // home: MyTabbedDemo3(),
       // home: MyScopedModelDemo1(
       //   myModel: MyCounterModel(),
