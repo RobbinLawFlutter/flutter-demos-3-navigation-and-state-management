@@ -43,7 +43,7 @@ class _AlertDialogSnackBarState extends State<AlertDialogSnackBar> {
                   ),
                   content: DecoratedBox(
                     decoration: BoxDecoration(
-                      color: Colors.lime,
+                      color: Colors.blueGrey,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
