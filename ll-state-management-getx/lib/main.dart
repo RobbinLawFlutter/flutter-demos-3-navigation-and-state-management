@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:robbinlaw/bindings/globalBindings.dart';
-import 'package:robbinlaw/views/root.dart';
+import 'package:robbinlaw/views/home.dart';
 
 //don't need 'Get' before Material App if you're only using State Management
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //dependancy injection via Bindings().
       initialBinding: GlobalBindings(),
-      home: Root(),
+      home: HomeView(),
       theme: ThemeData.dark(),
     );
   }

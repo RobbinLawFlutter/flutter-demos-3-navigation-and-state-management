@@ -12,7 +12,7 @@ class UserController extends GetxController {
     print('UserController onInit:');
     _userStream.value = UserModel();
     _userStream.update((val) {
-      val.name = 'hey man';
+      val.name = 'OnInit Name';
       val.count = 2;
     });
 
@@ -37,10 +37,10 @@ class UserController extends GetxController {
     super.onClose();
   }
 
-  void updateUser(int count) {
+  void updateUser({String name, int count}) {
     print('UserController updateUser:');
     _userStream.update((val) {
-      val.name = 'Robbin';
+      val.name = name;
       val.count = count;
     });
   }

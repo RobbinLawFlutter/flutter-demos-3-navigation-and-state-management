@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:robbinlaw/controllers/sumController.dart';
 
-class Second extends StatelessWidget {
-  //final SumController sumController = Get.put(SumController());
-
+class SecondView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Page'),
+        title: Text('Second View'),
       ),
       body: Center(
         child: Column(

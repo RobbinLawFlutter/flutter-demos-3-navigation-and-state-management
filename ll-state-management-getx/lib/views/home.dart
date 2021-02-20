@@ -1,89 +1,72 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:robbinlaw/controllers/countController.dart';
+import 'package:robbinlaw/controllers/userController.dart';
 import 'package:robbinlaw/views/second.dart';
 
-class Home extends StatelessWidget {
-  goToNext() {
-    //Navigator.push(context, MaterialPageRoute(builder: (context)=>Second()));
-    navigator.push(MaterialPageRoute(builder: (context) => Second()));
-    //Get.to(Second());
-  }
-
-  _showSnackBar() {
-    Get.snackbar(
-      "Hey There",
-      "Snackbar is easy",
-      snackPosition: SnackPosition.BOTTOM,
-    );
-  }
-
-  _showDialog() {
-    Get.defaultDialog(
-      title: "Simple Dialog",
-      content: Text("Too Easy"),
-    );
-  }
-
-  _showBottomSheet() {
-    Get.bottomSheet(
-      Container(
-        child: Wrap(
-          children: <Widget>[
-            ListTile(
-                leading: Icon(Icons.music_note),
-                title: Text('Music'),
-                onTap: () => {}),
-            ListTile(
-              leading: Icon(Icons.videocam),
-              title: Text('Video'),
-              onTap: () => {},
-            ),
-            SizedBox(
-              height: 100,
-            ),
-          ],
-        ),
-      ),
-      backgroundColor: Colors.white,
-    );
-  }
-
+class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print('Root build');
     return Scaffold(
       appBar: AppBar(
-        title: Text("Get Package | Home"),
-        centerTitle: true,
+        title: Text("GetX | State Management"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(
-              child: Text("Go To Second"),
-              onPressed: () => goToNext(),
-            ),
-            RaisedButton(
-              child: Text("Snackbar"),
-              onPressed: _showSnackBar,
-            ),
-            RaisedButton(
-              child: Text("Dialog"),
-              onPressed: _showDialog,
-            ),
-            RaisedButton(
-              child: Text("Bottom Sheet"),
-              onPressed: _showBottomSheet,
+          children: [
+            GetX<CountController>(
+              initState: (_) {},
+              builder: (_) {
+                print('Root GetX<CountController> builder: ');
+                return Text(
+                  'Current Counter Value: ${_.counter.count}',
+                );
+              },
             ),
             SizedBox(
-              height: 40,
+              height: 10,
             ),
             RaisedButton(
-              child: Text("Name Route: /second"),
+              child: Text("Increment Counter"),
               onPressed: () {
-                Get.toNamed("/second");
+                Get.find<CountController>().increment();
               },
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            GetX<UserController>(
+              initState: (_) {},
+              builder: (_) {
+                print('Root GetX<UserController> builder: ');
+                return Column(children: [
+                  Text('User Name: ${_.user?.name}'),
+                  Text('User Count: ${Get.find<UserController>().user?.count}'),
+                ]);
+              },
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            RaisedButton(
+              child: Text("Update User Name & Count"),
+              onPressed: () {
+                Get.find<UserController>().updateUser(
+                    name: 'Robbin',
+                    count: Get.find<CountController>().counter.count);
+              },
+            ),
+            SizedBox(
+              height: 100,
+            ),
+            RaisedButton(
+              child: Text('Next Screen'),
+              onPressed: () {
+                Get.to(SecondView());
+              },
+            ),
           ],
         ),
       ),
