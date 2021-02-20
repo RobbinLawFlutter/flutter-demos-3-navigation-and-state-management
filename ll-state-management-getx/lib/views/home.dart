@@ -11,6 +11,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("GetX | Home View"),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(

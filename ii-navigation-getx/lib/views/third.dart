@@ -8,7 +8,7 @@ class ThirdView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Third Screen"),
+        title: Text("Third View"),
       ),
       body: Center(
         child: Column(
@@ -16,7 +16,7 @@ class ThirdView extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () => Get.offAll(HomeView()),
-              child: Text("Go To Home"),
+              child: Text("Go To Home View"),
             )
           ],
         ),

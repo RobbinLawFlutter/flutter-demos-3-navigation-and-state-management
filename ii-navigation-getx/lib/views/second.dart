@@ -16,39 +16,51 @@ class _SecondViewState extends State<SecondView> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Second Screen"),
+        title: Text("Second View"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              child: Text("Go to Third and remove this screen from stack"),
+              child: Text(
+                  "Go to Third View but do not remove this view from stack"),
+              onPressed: () => Get.to(ThirdView()),
+            ),
+            ElevatedButton(
+              child: Text("Go to Third View and remove this view from stack"),
               onPressed: () => Get.off(ThirdView()),
             ),
             ElevatedButton(
-              child: Text("Go To Third and remove everything from stack"),
+              child: Text("Go To Third View and remove everything from stack"),
               onPressed: () => Get.offAll(ThirdView()),
-            ),
-            SizedBox(
-              height: 100,
-            ),
-            Text("Data From Fourth Screen: " + dataFromFourth),
-            ElevatedButton(
-              child: Text("Return Data from Fourth Screen"),
-              onPressed: () async {
-                dataFromFourth = await Get.to(FourthView());
-                setState(() {});
-              },
             ),
             SizedBox(
               height: 40,
             ),
             ElevatedButton(
-                child: Text("Go to Named /fourth with parameter"),
+                child: Text("Go to Fourth View via Get.to with parameter"),
                 onPressed: () {
-                  Get.toNamed("/fourth", arguments: "Passed From Second");
+                  Get.to(FourthView(),
+                      arguments: "Passed From Second View via Get.to");
                 }),
+            ElevatedButton(
+                child: Text("Go to Fourth View via Get.toNamed with parameter"),
+                onPressed: () {
+                  Get.toNamed("/fourth",
+                      arguments: "Passed From Second View via Get.toNamed");
+                }),
+            SizedBox(
+              height: 40,
+            ),
+            Text("Data From Fourth View: " + dataFromFourth),
+            ElevatedButton(
+              child: Text("Return Data from Fourth View"),
+              onPressed: () async {
+                dataFromFourth = await Get.to(FourthView());
+                setState(() {});
+              },
+            ),
           ],
         ),
       ),

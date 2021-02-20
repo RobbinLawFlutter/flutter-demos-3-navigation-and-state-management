@@ -7,7 +7,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("GetX | Home"),
+        title: Text("GetX | Home View"),
         centerTitle: true,
       ),
       body: Center(
@@ -15,28 +15,28 @@ class HomeView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              child: Text("Go To Second"),
-              onPressed: () {
-                Get.to(SecondView());
-              },
-            ),
-            ElevatedButton(
-              child: Text("Snackbar"),
+              child: Text("Show Snackbar"),
               onPressed: _showSnackBar,
             ),
             ElevatedButton(
-              child: Text("Dialog"),
+              child: Text("Show Dialog"),
               onPressed: _showDialog,
             ),
             ElevatedButton(
-              child: Text("Bottom Sheet"),
+              child: Text("Show Bottom Sheet"),
               onPressed: _showBottomSheet,
             ),
             SizedBox(
               height: 40,
             ),
             ElevatedButton(
-              child: Text("Name Route: /second"),
+              child: Text("Go To Second View via Get.to"),
+              onPressed: () {
+                Get.to(SecondView());
+              },
+            ),
+            ElevatedButton(
+              child: Text("Go To Second View via Get.toNamed"),
               onPressed: () {
                 Get.toNamed("/second");
               },

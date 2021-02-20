@@ -6,7 +6,8 @@ class FourthView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Fourth Screen"),
+        title: Text("Fourth View"),
+        centerTitle: true,
       ),
       body: Center(
         child: (Get.arguments != null)
