@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:robbinlaw/screens/third.dart';
+import 'package:robbinlaw/views/third.dart';
+import 'package:robbinlaw/views/fourth.dart';
 
-import 'fourth.dart';
-
-class Second extends StatefulWidget {
+class SecondView extends StatefulWidget {
   @override
-  _SecondState createState() => _SecondState();
+  _SecondViewState createState() => _SecondViewState();
 }
 
-class _SecondState extends State<Second> {
+class _SecondViewState extends State<SecondView> {
   String dataFromFourth = "0";
 
   @override
@@ -23,29 +22,29 @@ class _SecondState extends State<Second> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               child: Text("Go to Third and remove this screen from stack"),
-              onPressed: () => Get.off(Third()),
+              onPressed: () => Get.off(ThirdView()),
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Go To Third and remove everything from stack"),
-              onPressed: () => Get.offAll(Third()),
+              onPressed: () => Get.offAll(ThirdView()),
             ),
             SizedBox(
               height: 100,
             ),
             Text("Data From Fourth Screen: " + dataFromFourth),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Return Data from Fourth Screen"),
               onPressed: () async {
-                dataFromFourth = await Get.to(Fourth());
+                dataFromFourth = await Get.to(FourthView());
                 setState(() {});
               },
             ),
             SizedBox(
               height: 40,
             ),
-            RaisedButton(
+            ElevatedButton(
                 child: Text("Go to Named /fourth with parameter"),
                 onPressed: () {
                   Get.toNamed("/fourth", arguments: "Passed From Second");

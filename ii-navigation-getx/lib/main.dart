@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:robbinlaw/screens/fourth.dart';
-import 'package:robbinlaw/screens/home.dart';
-import 'package:robbinlaw/screens/second.dart';
-import 'package:robbinlaw/screens/third.dart';
+import 'package:robbinlaw/views/fourth.dart';
+import 'package:robbinlaw/views/home.dart';
+import 'package:robbinlaw/views/second.dart';
+import 'package:robbinlaw/views/third.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: Home(),
+      home: HomeView(),
       theme: ThemeData(
         accentColor: Colors.purpleAccent,
         primaryColor: Colors.purple,
@@ -21,20 +21,20 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: '/',
-          page: () => Home(),
+          page: () => HomeView(),
         ),
         GetPage(
           name: '/second',
-          page: () => Second(),
+          page: () => SecondView(),
         ),
         GetPage(
           name: '/third',
-          page: () => Third(),
+          page: () => ThirdView(),
           transition: Transition.zoom,
         ),
         GetPage(
           name: "/fourth",
-          page: () => Fourth(),
+          page: () => FourthView(),
         ),
       ],
     );

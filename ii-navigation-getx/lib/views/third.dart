@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:robbinlaw/screens/home.dart';
+import 'package:robbinlaw/views/home.dart';
 
-class Third extends StatelessWidget {
+class ThirdView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,8 +14,8 @@ class Third extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
-              onPressed: () => Get.offAll(Home()),
+            ElevatedButton(
+              onPressed: () => Get.offAll(HomeView()),
               child: Text("Go To Home"),
             )
           ],

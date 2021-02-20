@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:robbinlaw/screens/second.dart';
+import 'package:robbinlaw/views/second.dart';
 
-class Home extends StatelessWidget {
+class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Get Package | Home"),
+        title: Text("GetX | Home"),
         centerTitle: true,
       ),
       body: Center(
@@ -17,10 +17,7 @@ class Home extends StatelessWidget {
             ElevatedButton(
               child: Text("Go To Second"),
               onPressed: () {
-                //Navigator.push(context, MaterialPageRoute(builder: (context)=>Second()));
-                navigator
-                    .push(MaterialPageRoute(builder: (context) => Second()));
-                //Get.to(Second());
+                Get.to(SecondView());
               },
             ),
             ElevatedButton(
