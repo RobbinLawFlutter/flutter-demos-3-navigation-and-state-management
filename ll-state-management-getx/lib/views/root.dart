@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:robbinlaw/controllers/countController.dart';
 import 'package:robbinlaw/controllers/userController.dart';
-import 'package:robbinlaw/screens/second.dart';
+import 'package:robbinlaw/views/second.dart';
 
 class Root extends GetWidget<CountController> {
   //final CountController countController = Get.put(CountController());

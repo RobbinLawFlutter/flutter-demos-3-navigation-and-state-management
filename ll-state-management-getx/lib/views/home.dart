@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:robbinlaw/screens/second.dart';
+import 'package:robbinlaw/views/second.dart';
 
 class Home extends StatelessWidget {
   goToNext() {

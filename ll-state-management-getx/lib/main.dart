@@ -4,8 +4,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:robbinlaw/controllers/globalBindings.dart';
-import 'package:robbinlaw/screens/root.dart';
+import 'package:robbinlaw/bindings/globalBindings.dart';
+import 'package:robbinlaw/views/root.dart';
 
 //don't need 'Get' before Material App if you're only using State Management
 void main() {
