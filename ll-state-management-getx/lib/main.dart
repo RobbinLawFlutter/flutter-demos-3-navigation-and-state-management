@@ -8,6 +8,7 @@ import 'package:robbinlaw/bindings/globalBindings.dart';
 import 'package:robbinlaw/views/home.dart';
 
 //don't need 'Get' before Material App if you're only using State Management
+//but we will also use Get for Navigation Management so we will need it.
 void main() {
   runApp(MyApp());
 }

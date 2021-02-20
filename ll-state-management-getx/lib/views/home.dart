@@ -10,7 +10,7 @@ class HomeView extends StatelessWidget {
     print('Root build');
     return Scaffold(
       appBar: AppBar(
-        title: Text("GetX | State Management"),
+        title: Text("GetX | Home View"),
       ),
       body: Center(
         child: Column(
