@@ -4,7 +4,7 @@ import 'package:robbinlaw/controllers/countController.dart';
 import 'package:robbinlaw/controllers/userController.dart';
 import 'package:robbinlaw/views/second.dart';
 
-class Root extends GetWidget<CountController> {
+class Root extends StatelessWidget {
   //final CountController countController = Get.put(CountController());
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class Root extends GetWidget<CountController> {
               builder: (_) {
                 print('Root GetX<CountController> builder: ');
                 return Text(
-                  'Current Count Value: ${controller.counter.count}',
+                  'Current Count Value: ${_.counter.count}',
                   //'Current Count Value: ${Get.find<CountController>().counter.count}',
                   //'Current Count Value: ${_.counter.count}',
                 );
@@ -33,7 +33,13 @@ class Root extends GetWidget<CountController> {
             ),
             GetX<UserController>(
               initState: (_) {},
-              builder: (_) => Text('Name: ${_.user?.name}'),
+              builder: (_) {
+                print('Root GetX<UserController> builder: ');
+                return Column(children: [
+                  Text('User Name: ${_.user?.name}'),
+                  Text('User Count: ${_.user?.count}'),
+                ]);
+              },
             ),
             GetX<CountController>(
               initState: (_) {},
