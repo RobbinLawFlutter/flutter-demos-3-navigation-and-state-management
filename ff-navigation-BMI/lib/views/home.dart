@@ -13,12 +13,12 @@ enum Gender {
   female,
 }
 
-class MyHomePage extends StatefulWidget {
+class Home extends StatefulWidget {
   @override
-  MyHomePageState createState() => MyHomePageState();
+  HomeState createState() => HomeState();
 }
 
-class MyHomePageState extends State<MyHomePage> {
+class HomeState extends State<Home> {
   Gender selectedGender;
   int height = 180;
   int weight = 60;
@@ -223,7 +223,7 @@ class MyHomePageState extends State<MyHomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ResultsPage(
+                  builder: (context) => Results(
                     bmiResult: calc.calculateBMI(),
                   ),
                 ),

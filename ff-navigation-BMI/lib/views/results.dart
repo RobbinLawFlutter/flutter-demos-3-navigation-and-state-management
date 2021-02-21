@@ -3,8 +3,8 @@ import 'package:robbinlaw/widgets/bottom-button.dart';
 import 'package:robbinlaw/constants.dart';
 import 'package:robbinlaw/widgets/reusable-card-enhanced.dart';
 
-class ResultsPage extends StatelessWidget {
-  ResultsPage({@required this.bmiResult});
+class Results extends StatelessWidget {
+  Results({@required this.bmiResult});
 
   final String bmiResult;
 
