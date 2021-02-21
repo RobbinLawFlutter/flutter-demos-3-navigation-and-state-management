@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:robbinlaw/widgets/reusable-card.dart';
+import 'package:robbinlaw/widgets/reusable-card-enhanced.dart';
 import 'package:robbinlaw/widgets/round-icon-button.dart';
 import 'package:robbinlaw/widgets/my-icon.dart';
 import 'package:robbinlaw/widgets/bottom-button.dart';
