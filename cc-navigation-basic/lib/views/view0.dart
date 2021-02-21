@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:robbinlaw/screen1.dart';
-import 'package:robbinlaw/screen2.dart';
+import 'package:robbinlaw/views/view1.dart';
+import 'package:robbinlaw/views/view2.dart';
 
-class Screen0 extends StatelessWidget {
+class View0 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class Screen0 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Screen1(),
+                    builder: (context) => View1(),
                   ),
                 );
               },
@@ -35,7 +35,7 @@ class Screen0 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Screen2(),
+                    builder: (context) => View2(),
                   ),
                 );
               },

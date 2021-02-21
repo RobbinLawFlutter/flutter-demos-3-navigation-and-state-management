@@ -5,7 +5,7 @@
 //https://medium.com/flutter-community/flutter-push-pop-push-1bb718b13c31
 
 import 'package:flutter/material.dart';
-import 'screen0.dart';
+import 'package:robbinlaw/views/view0.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Screen0(),
+      home: View0(),
     );
   }
 }
