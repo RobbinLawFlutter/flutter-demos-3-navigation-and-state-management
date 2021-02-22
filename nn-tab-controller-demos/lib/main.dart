@@ -32,8 +32,8 @@ class MyApp extends StatelessWidget {
       //home: MyTabbedDemo3(),
       //home: MyScopedModelDemo1(),
       //home: MyScopedModelDemo2(),
-      //home: MyTabbedScopedModelDemo(),
-      home: AlertDialogAndSnackBarDemo(),
+      home: MyTabbedScopedModelDemo(),
+      //home: AlertDialogAndSnackBarDemo(),
       theme: ThemeData.dark(),
     );
   }

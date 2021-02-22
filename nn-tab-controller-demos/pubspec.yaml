@@ -64,24 +64,6 @@ flutter:
   - assets/img/3-1.jpg
   - assets/img/3-2.jpg
   - assets/img/3-3.jpg
-  - assets/img/black-coffee.jpeg
-  - assets/img/cappuccino.jpeg
-  - assets/img/espresso.jpeg
-  - assets/img/latte.jpeg
-  - assets/img/black-tea.jpeg
-  - assets/img/brown-tea.jpeg
-  - assets/img/english-tea.jpeg
-  - assets/img/herbal-tea.jpeg
-  - assets/img/lemon.jpeg
-  - assets/img/lime.jpeg
-  - assets/img/mint-tea.jpeg
-  - assets/img/pink-grape.jpeg
-  - assets/img/plum.jpeg
-  - assets/img/tomato.jpeg
-  - assets/img/apple-smoothie.jpeg
-  - assets/img/black-smoothie.jpeg
-  - assets/img/kiwi-smoothie.jpeg
-  - assets/img/rasberry-smoothie.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
