@@ -68,9 +68,10 @@ class HomeView extends StatelessWidget {
         child: Wrap(
           children: <Widget>[
             ListTile(
-                leading: Icon(Icons.music_note),
-                title: Text('Music'),
-                onTap: () => {}),
+              leading: Icon(Icons.music_note),
+              title: Text('Music'),
+              onTap: () => {},
+            ),
             ListTile(
               leading: Icon(Icons.videocam),
               title: Text('Video'),
@@ -82,7 +83,7 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
     );
   }
 }
