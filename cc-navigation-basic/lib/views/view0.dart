@@ -8,7 +8,7 @@ class View0 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        title: Text('Screen 0'),
+        title: Text('View 0'),
       ),
       body: Center(
         child: Column(
@@ -16,9 +16,9 @@ class View0 extends StatelessWidget {
           children: <Widget>[
             RaisedButton(
               color: Colors.red,
-              child: Text('Go To Screen 1'),
+              child: Text('Go To View 1'),
               onPressed: () {
-                //Navigate to Screen 1
+                //Navigate to View 1
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -29,7 +29,7 @@ class View0 extends StatelessWidget {
             ),
             RaisedButton(
               color: Colors.blue,
-              child: Text('Go To Screen 2'),
+              child: Text('Go To View 2'),
               onPressed: () {
                 //Navigate to Screen 2
                 Navigator.push(
