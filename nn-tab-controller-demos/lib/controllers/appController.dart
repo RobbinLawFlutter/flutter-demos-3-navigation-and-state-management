@@ -35,7 +35,7 @@ class AppController extends GetxController {
     super.onClose();
   }
 
-  void updateDrinksListType(List<NumberModel> numberListType) {
+  void updateNumberListType(List<NumberModel> numberListType) {
     _appStream.value = numberListType;
     print(
         'AppController updateDrinksList: stream.value[0].title = ${_appStream.value[0].title}');
