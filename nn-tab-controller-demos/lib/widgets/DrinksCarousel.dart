@@ -66,7 +66,7 @@ class _NumbersCarouselState extends State<NumbersCarousel>
                         throw '${numberModel.title} type not recognized';
                     }
                     Get.find<AppController>()
-                        .updateDrinksListType(numberListType);
+                        .updateNumberListType(numberListType);
                   },
                   child: NumberCard(
                     numberModel: numberModel,
