@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:robbinlaw/controllers/appController.dart';
-import 'package:robbinlaw/widgets/DrinksCarousel.dart';
-import 'package:robbinlaw/widgets/DrinksList.dart';
+import 'package:robbinlaw/widgets/numbersCarousel.dart';
+import 'package:robbinlaw/widgets/numbersList.dart';
 
-class Home extends StatelessWidget {
+class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +14,9 @@ class Home extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          NumbersCarousel(),
+          NumbersCarousel(
+            color: Colors.blue,
+          ),
           NumbersList(),
         ],
       ),
