@@ -25,13 +25,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //dependancy injection via Bindings().
       initialBinding: GlobalBindings(),
-      home: HomeView(),
       //home: MyTabbedDemo1(),
       //home: MyTabbedDemo2(),
       //home: MyTabbedDemo3(),
       //home: MyScopedModelDemo1(),
       //home: MyScopedModelDemo2(),
       //home: AlertDialogAndSnackBarDemo(),
+      home: HomeView(),
       theme: ThemeData.dark(),
     );
   }
