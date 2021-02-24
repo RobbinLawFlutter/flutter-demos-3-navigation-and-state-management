@@ -1,11 +1,18 @@
+//Dart getters and setters by geekforgeeks.
+//https://www.geeksforgeeks.org/getter-and-setter-methods-in-dart/
+
+//Dart getters and setters by dart.dev.
+//https://dart.dev/guides/language/language-tour#getters-and-setters
+
 import 'package:get/state_manager.dart';
 import 'package:robbinlaw/models/count.dart';
 
 class CountController extends GetxController {
+  //Creating a stream of data events of type CounterModel.
   Rx<CounterModel> _counterModelStream = Rx<CounterModel>();
-
+  //Darts way of creating a getter for a public property.
   CounterModel get counter => this._counterModelStream.value;
-
+  //Darts way of creating a setter for a public property.
   set counter(CounterModel value) => this._counterModelStream.value = value;
 
   @override

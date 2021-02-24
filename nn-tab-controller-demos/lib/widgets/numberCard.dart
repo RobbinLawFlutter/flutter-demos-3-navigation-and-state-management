@@ -4,10 +4,11 @@ import 'package:robbinlaw/models/numberModel.dart';
 class NumberCard extends StatelessWidget {
   final NumberModel numberModel;
 
-  const NumberCard({Key key, this.numberModel}) : super(key: key);
+  const NumberCard({this.numberModel});
 
   @override
   Widget build(BuildContext context) {
+    //print('NumberCard build:');
     return Card(
       child: Center(
         child: Stack(

@@ -14,9 +14,7 @@ class HomeView extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          NumbersCarousel(
-            color: Colors.blue,
-          ),
+          NumbersCarousel(),
           NumbersList(),
         ],
       ),

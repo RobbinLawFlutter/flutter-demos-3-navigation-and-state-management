@@ -6,10 +6,6 @@ import 'package:robbinlaw/widgets/numberCard.dart';
 import 'package:robbinlaw/controllers/appController.dart';
 
 class NumbersCarousel extends StatefulWidget {
-  NumbersCarousel({this.color});
-
-  final Color color;
-
   @override
   _NumbersCarouselState createState() => _NumbersCarouselState();
 }
@@ -35,8 +31,6 @@ class _NumbersCarouselState extends State<NumbersCarousel>
 
   @override
   Widget build(BuildContext context) {
-    Color myColor = widget.color;
-
     return SizedBox(
       height: 350.0,
       width: double.infinity,
@@ -44,7 +38,7 @@ class _NumbersCarouselState extends State<NumbersCarousel>
         decoration: BoxDecoration(
           border: Border.all(
             width: 4.0,
-            color: myColor,
+            color: Colors.black45,
           ),
         ),
         child: Stack(
@@ -78,38 +72,57 @@ class _NumbersCarouselState extends State<NumbersCarousel>
               alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: TabPageSelector(
-                  controller: _tabController,
-                  color: Colors.white,
-                  selectedColor: myColor,
-                  indicatorSize: 20,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black45,
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                  ),
+                  child: TabPageSelector(
+                    controller: _tabController,
+                    selectedColor: Colors.white,
+                    indicatorSize: 20,
+                  ),
                 ),
               ),
             ),
             Align(
               alignment: Alignment.centerLeft,
-              child: IconButton(
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: myColor,
-                  size: 36,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.black45,
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
                 ),
-                onPressed: () {
-                  _changeImage(delta: -1);
-                },
+                child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back,
+                    size: 36,
+                  ),
+                  onPressed: () {
+                    _changeImage(
+                      delta: -1,
+                    );
+                  },
+                ),
               ),
             ),
             Align(
               alignment: Alignment.centerRight,
-              child: IconButton(
-                icon: Icon(
-                  Icons.arrow_forward,
-                  color: myColor,
-                  size: 36,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.black45,
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
                 ),
-                onPressed: () {
-                  _changeImage(delta: 1);
-                },
+                child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_forward,
+                    size: 36,
+                  ),
+                  onPressed: () {
+                    _changeImage(
+                      delta: 1,
+                    );
+                  },
+                ),
               ),
             ),
           ],
