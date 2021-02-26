@@ -16,11 +16,11 @@ class UserController extends GetxController {
       val.count = 0;
     });
 
-    // Called every time the variable $_ is changed
-    ever(_userStream, (_) => print("$_ has been changed"));
+    // Called every time the userStream is changed
+    ever(_userStream, (_) => print("_userStream has been changed"));
 
-    // Called first time the variable $_ is changed
-    once(_userStream, (_) => print("$_ was changed once"));
+    // Called first time the userStream is changed
+    once(_userStream, (_) => print("_userStream was changed once"));
   }
 
   // called after the widget is rendered on screen
