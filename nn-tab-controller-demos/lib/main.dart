@@ -7,12 +7,10 @@ import 'package:get/get.dart';
 import 'package:robbinlaw/bindings/globalBindings.dart';
 import 'package:robbinlaw/views/home.dart';
 
-import 'package:robbinlaw/demos/ac_tabbed_page_demo_1.dart';
-import 'package:robbinlaw/demos/ae_tabbed_page_demo_2.dart';
-import 'package:robbinlaw/demos/ag_tabbed_page_demo_3.dart';
-import 'package:robbinlaw/demos/aj_scoped_model_demo_1.dart';
-import 'package:robbinlaw/demos/ak_scoped_model_demo_2.dart';
-import 'package:robbinlaw/demos/ay_AlertDialog_SnackBar_Demo.dart';
+import 'package:robbinlaw/demos/aa-tab-demo-1.dart';
+import 'package:robbinlaw/demos/cc-tab-demo-2.dart';
+import 'package:robbinlaw/demos/dd-tab-demo-3.dart';
+import 'package:robbinlaw/demos/ff-dialog-snackbar.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,8 +26,6 @@ class MyApp extends StatelessWidget {
       //home: MyTabbedDemo1(),
       //home: MyTabbedDemo2(),
       //home: MyTabbedDemo3(),
-      //home: MyScopedModelDemo1(),
-      //home: MyScopedModelDemo2(),
       //home: AlertDialogAndSnackBarDemo(),
       home: HomeView(),
       theme: ThemeData.dark(),
