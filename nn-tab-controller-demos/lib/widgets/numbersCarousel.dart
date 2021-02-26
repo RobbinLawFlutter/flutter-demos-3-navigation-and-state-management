@@ -50,10 +50,10 @@ class _NumbersCarouselState extends State<NumbersCarousel>
                   onTap: () {
                     List<NumberModel> numberListType;
                     switch (numberModel.title) {
-                      case '1':
+                      case 'ones':
                         numberListType = oneTypes;
                         break;
-                      case '2':
+                      case 'twos':
                         numberListType = twoTypes;
                         break;
                       default:

@@ -1,8 +1,8 @@
 import 'package:robbinlaw/models/numberModel.dart';
 
 List<NumberModel> mainTypes = <NumberModel>[
-  NumberModel(title: '1', image: 'assets/img/1-1.jpg'),
-  NumberModel(title: '2', image: 'assets/img/2-1.jpg'),
+  NumberModel(title: 'ones', image: 'assets/img/1-1.jpg'),
+  NumberModel(title: 'twos', image: 'assets/img/2-1.jpg'),
 ];
 
 List<NumberModel> oneTypes = <NumberModel>[
