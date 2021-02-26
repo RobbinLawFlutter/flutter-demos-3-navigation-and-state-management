@@ -8,16 +8,15 @@ class ThirdView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Third View'),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GetX<SumController>(
-              //You can use bindings instead of init. Bindings are when this widget gets
-              //rendered, you can create your Controller
               builder: (_) {
-                print("count1 rebuild");
+                print("ThirdView GetX<SumController> 1 builder:");
                 return Text(
                   'Counter #1:    ${_.counter1?.count}',
                   style: TextStyle(fontWeight: FontWeight.bold),
@@ -27,7 +26,7 @@ class ThirdView extends StatelessWidget {
             Text("                        +"),
             GetX<SumController>(
               builder: (_) {
-                print("count2 rebuild");
+                print("ThirdView GetX<SumController> 2 builder:");
                 return Text(
                   'Counter #2:    ${_.counter2?.count}',
                   style: TextStyle(fontWeight: FontWeight.bold),
@@ -36,7 +35,7 @@ class ThirdView extends StatelessWidget {
             ),
             Text("                        ="),
             GetX<SumController>(builder: (_) {
-              print("sum rebuild");
+              print("ThirdView GetX<SumController> 3 builder:");
               return Text(
                 'Sum:                 ${_.sum}',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -48,7 +47,7 @@ class ThirdView extends StatelessWidget {
             ElevatedButton(
               child: Text("Increment Counter #1"),
               onPressed: () {
-                Get.find<SumController>().increment();
+                Get.find<SumController>().increment1();
                 //_.increment();
               },
             ),

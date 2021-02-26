@@ -24,11 +24,13 @@ class CountController extends GetxController {
       val.count = 0;
     });
 
-    /// Called every time the variable $_ is changed
-    ever(_counterModelStream, (_) => print("$_ has been changed"));
+    /// Called every time the stream is changed
+    ever(_counterModelStream,
+        (_) => print("_counterModelStream has been changed"));
 
-    /// Called first time the variable $_ is changed
-    once(_counterModelStream, (_) => print("$_ was changed once"));
+    /// Called first time the stream is changed
+    once(_counterModelStream,
+        (_) => print("_counterModelStream was changed once"));
   }
 
   @override

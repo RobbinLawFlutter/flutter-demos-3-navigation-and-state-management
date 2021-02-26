@@ -22,7 +22,7 @@ class SecondView extends StatelessWidget {
               builder: (_) {
                 print('SecondView GetX<CountController> builder: ');
                 return Text(
-                  'Current Counter Value: ${_.counter.count}',
+                  'Counter #0:   ${_.counter.count}',
                 );
               },
             ),
@@ -36,20 +36,21 @@ class SecondView extends StatelessWidget {
               },
             ),
             SizedBox(
-              height: 20,
+              height: 40,
             ),
             GetX<UserController>(
               initState: (_) {},
               builder: (_) {
                 print('SecondView GetX<UserController> builder: ');
                 return Column(children: [
-                  Text('User Name: ${_.user?.name}'),
-                  Text('User Count: ${Get.find<UserController>().user?.count}'),
+                  Text('User Name:   ${_.user?.name}'),
+                  Text(
+                      'User Count:   ${Get.find<UserController>().user?.count}'),
                 ]);
               },
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             ElevatedButton(
               child: Text("Update User Name & Count"),
@@ -60,7 +61,7 @@ class SecondView extends StatelessWidget {
               },
             ),
             SizedBox(
-              height: 100,
+              height: 40,
             ),
             ElevatedButton(
               child: Text('Go to Third View'),
