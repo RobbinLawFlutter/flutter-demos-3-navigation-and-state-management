@@ -3,12 +3,13 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:robbinlaw/controllers/sumController.dart';
 
-class Second extends StatelessWidget {
+class SecondView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('second Route'),
+        title: Text('second View'),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
@@ -78,19 +79,9 @@ class Second extends StatelessWidget {
               height: 40,
             ),
             RaisedButton(
-              child: Text("Change Theme"),
+              child: Text('Go back'),
               onPressed: () {
-                if (Get.isDarkMode) {
-                  Get.changeTheme(ThemeData.light());
-                } else {
-                  Get.changeTheme(ThemeData.dark());
-                }
-
-                print("Screen Height: " + Get.height.toString());
-                print("Screen Width: " + Get.width.toString());
-                print("Is Device IOS?: " + GetPlatform.isIOS.toString());
-                print(
-                    "Is Device Android?: " + GetPlatform.isAndroid.toString());
+                Get.back();
               },
             ),
           ],

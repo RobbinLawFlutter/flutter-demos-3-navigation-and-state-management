@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:robbinlaw/views/second.dart';
 
-class First extends StatelessWidget {
+class HomeView extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("title".trArgs(['John'])),
+        title: Text("GetX | HomeView"),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
@@ -43,36 +45,28 @@ class First extends StatelessWidget {
               height: 40,
             ),
             RaisedButton(
-              child: Text('Change locale to English'),
+              child: Text('Go to Second View'),
               onPressed: () {
-                Get.updateLocale(Locale('en', 'UK'));
-              },
-            ),
-            RaisedButton(
-              child: Text('Change locale to US'),
-              onPressed: () {
-                Get.updateLocale(Locale('en', 'US'));
-              },
-            ),
-            RaisedButton(
-              child: Text('Change locale to Portugal'),
-              onPressed: () {
-                Get.updateLocale(Locale('pt', 'PT'));
-              },
-            ),
-            RaisedButton(
-              child: Text('Change locale to Brazil'),
-              onPressed: () {
-                Get.updateLocale(Locale('pt', 'BR'));
+                Get.to(SecondView());
               },
             ),
             SizedBox(
               height: 40,
             ),
             RaisedButton(
-              child: Text('Next Route'),
+              child: Text("Change Theme"),
               onPressed: () {
-                Get.toNamed('/second');
+                if (Get.isDarkMode) {
+                  Get.changeTheme(ThemeData.light());
+                } else {
+                  Get.changeTheme(ThemeData.dark());
+                }
+
+                print("Screen Height: " + Get.height.toString());
+                print("Screen Width: " + Get.width.toString());
+                print("Is Device IOS?: " + GetPlatform.isIOS.toString());
+                print(
+                    "Is Device Android?: " + GetPlatform.isAndroid.toString());
               },
             ),
           ],
