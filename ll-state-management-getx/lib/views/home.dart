@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:robbinlaw/controllers/countController.dart';
 import 'package:robbinlaw/controllers/userController.dart';
 import 'package:robbinlaw/controllers/sumController.dart';
-import 'package:robbinlaw/views/home.dart';
 import 'package:robbinlaw/views/second.dart';
 import 'package:robbinlaw/views/third.dart';
 

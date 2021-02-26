@@ -1,5 +1,5 @@
 class UserModel {
-  UserModel({this.name, this.count = 0});
+  UserModel({this.name, this.count});
   String name;
   int count;
 }
