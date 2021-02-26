@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      defaultTransition: Transition.upToDown,
       //dependancy injection via Bindings().
       initialBinding: GlobalBindings(),
       home: HomeView(),

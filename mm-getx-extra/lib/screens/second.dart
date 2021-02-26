@@ -20,7 +20,7 @@ class Second extends StatelessWidget {
               builder: (_) {
                 print("count1 rebuild");
                 return Text(
-                  'Counter #1:    ${_.count1.value}',
+                  'Counter #1:    ${_.counter1.count}',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 );
               },
@@ -30,7 +30,7 @@ class Second extends StatelessWidget {
               builder: (_) {
                 print("count2 rebuild");
                 return Text(
-                  'Counter #2:    ${_.count2.value}',
+                  'Counter #2:    ${_.counter2.count}',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 );
               },
@@ -49,7 +49,7 @@ class Second extends StatelessWidget {
             RaisedButton(
               child: Text("Increment Counter #1"),
               onPressed: () {
-                Get.find<SumController>().increment();
+                Get.find<SumController>().increment1();
               },
             ),
             RaisedButton(
@@ -62,8 +62,16 @@ class Second extends StatelessWidget {
               child: Text("Store Values"),
               onPressed: () {
                 GetStorage box = GetStorage();
-                box.write("count1", Get.find<SumController>().count1.value);
-                box.write("count2", Get.find<SumController>().count2.value);
+                box.write("count1", Get.find<SumController>().counter1.count);
+                box.write("count2", Get.find<SumController>().counter2.count);
+              },
+            ),
+            RaisedButton(
+              child: Text("Un Store Values"),
+              onPressed: () {
+                GetStorage box = GetStorage();
+                box.write("count1", null);
+                box.write("count2", null);
               },
             ),
             SizedBox(
