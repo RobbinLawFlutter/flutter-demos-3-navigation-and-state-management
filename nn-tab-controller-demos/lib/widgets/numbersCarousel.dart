@@ -56,6 +56,9 @@ class _NumbersCarouselState extends State<NumbersCarousel>
                       case 'twos':
                         numberListType = twoTypes;
                         break;
+                      case 'threes':
+                        numberListType = threeTypes;
+                        break;
                       default:
                         throw '${numberModel.title} type not recognized';
                     }

@@ -17,10 +17,10 @@ class AppController extends GetxController {
         'AppController onInit: stream.value[0].title = ${_appStream.value[0].title}');
 
     /// Called every time the variable $_ is changed
-    ever(_appStream, (_) => print("stream has been changed"));
+    ever(_appStream, (_) => print("appstream has been changed"));
 
     /// Called first time the variable $_ is changed
-    once(_appStream, (_) => print("stream was changed once"));
+    once(_appStream, (_) => print("appstream was changed once"));
   }
 
   @override
@@ -38,6 +38,6 @@ class AppController extends GetxController {
   void updateNumberListType(List<NumberModel> numberListType) {
     _appStream.value = numberListType;
     print(
-        'AppController updateDrinksList: stream.value[0].title = ${_appStream.value[0].title}');
+        'AppController updateNumbersListType: stream.value[0].title = ${_appStream.value[0].title}');
   }
 }

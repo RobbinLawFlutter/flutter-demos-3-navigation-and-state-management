@@ -10,7 +10,7 @@ class NumbersList extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetX<AppController>(
       builder: (_) {
-        print('DrinksList GetX<AppController> builder:');
+        print('NumbersList GetX<AppController> builder:');
         return Expanded(
           child: GridView.count(
             crossAxisCount: 2,
