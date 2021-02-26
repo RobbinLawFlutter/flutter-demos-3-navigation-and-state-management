@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:robbinlaw/controllers/countController.dart';
 import 'package:robbinlaw/controllers/userController.dart';
+import 'package:robbinlaw/controllers/sumController.dart';
 import 'package:robbinlaw/views/home.dart';
 import 'package:robbinlaw/views/second.dart';
 import 'package:robbinlaw/views/third.dart';
@@ -43,7 +44,7 @@ class HomeView extends StatelessWidget {
             GetX<UserController>(
               initState: (_) {},
               builder: (_) {
-                print('HomeView GetX<UserController> 2 builder: ');
+                print('HomeView GetX<UserController> 1 builder: ');
                 return Column(children: [
                   Text('User Name:   ${_.user?.name}'),
                   Text(
@@ -70,6 +71,21 @@ class HomeView extends StatelessWidget {
               onPressed: () {
                 Get.to(SecondView());
               },
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            GetX<SumController>(
+              initState: (_) {},
+              builder: (_) {
+                print('HomeView GetX<SumController> 1 builder: ');
+                return Column(children: [
+                  Text('ThirdView Sum:   ${_.sum}'),
+                ]);
+              },
+            ),
+            SizedBox(
+              height: 10,
             ),
             ElevatedButton(
               child: Text('Go to Third View'),
