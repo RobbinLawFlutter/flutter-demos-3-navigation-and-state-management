@@ -16,11 +16,11 @@ class AppController extends GetxController {
     print(
         'AppController onInit: stream.value[0].title = ${_appStream.value[0].title}');
 
-    /// Called every time the variable $_ is changed
-    ever(_appStream, (_) => print("appstream has been changed"));
+    /// Called every time the stream value is changed
+    ever(_appStream, (_) => print("appstream value has been changed"));
 
-    /// Called first time the variable $_ is changed
-    once(_appStream, (_) => print("appstream was changed once"));
+    /// Called first time the stream value is changed
+    once(_appStream, (_) => print("appstream value was changed once"));
   }
 
   @override
