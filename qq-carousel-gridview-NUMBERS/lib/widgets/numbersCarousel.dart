@@ -48,22 +48,7 @@ class _NumbersCarouselState extends State<NumbersCarousel>
               children: mainTypes.map((numberModel) {
                 return GestureDetector(
                   onTap: () {
-                    List<NumberModel> numberListType;
-                    switch (numberModel.title) {
-                      case 'ones':
-                        numberListType = oneTypes;
-                        break;
-                      case 'twos':
-                        numberListType = twoTypes;
-                        break;
-                      case 'threes':
-                        numberListType = threeTypes;
-                        break;
-                      default:
-                        throw '${numberModel.title} type not recognized';
-                    }
-                    Get.find<AppController>()
-                        .updateNumberListType(numberListType);
+                    print('You chose the ${numberModel.title}');
                   },
                   child: NumberCard(
                     numberModel: numberModel,
