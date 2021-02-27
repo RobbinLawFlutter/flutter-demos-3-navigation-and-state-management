@@ -24,26 +24,26 @@ class CountController extends GetxController {
       val.count = 0;
     });
 
-    /// Called every time the stream is changed
+    //Called every time the stream is changed
     ever(_counterModelStream,
         (_) => print("_counterModelStream has been changed"));
 
-    /// Called first time the stream is changed
+    //Called first time the stream is changed
     once(_counterModelStream,
         (_) => print("_counterModelStream was changed once"));
   }
 
+  // called after the widget is rendered on screen
   @override
   void onReady() {
-    print(
-        'CountController onReady:'); // called after the widget is rendered on screen
+    print('CountController onReady:');
     super.onReady();
   }
 
+  // called just before the Controller is deleted
   @override
   void onClose() {
-    print(
-        'CountController onClose:'); // called just before the Controller is deleted
+    print('CountController onClose:');
     super.onClose();
   }
 
