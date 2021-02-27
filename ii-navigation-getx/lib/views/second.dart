@@ -1,3 +1,8 @@
+//https://flutterbyexample.com/lesson/stateful-widget-lifecycle
+
+//Statefull Lifecyle by Robert Brunhage
+//https://www.youtube.com/watch?v=CjloInz3-I0
+
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:robbinlaw/views/third.dart';
@@ -10,6 +15,24 @@ class SecondView extends StatefulWidget {
 
 class _SecondViewState extends State<SecondView> {
   String dataFromFourth = "0";
+
+  @override
+  void initState() {
+    super.initState();
+    print('SecondView initState');
+  }
+
+  @override
+  void deactivate() {
+    print('SecondView deactivate');
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    print('SecondView dispose');
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
