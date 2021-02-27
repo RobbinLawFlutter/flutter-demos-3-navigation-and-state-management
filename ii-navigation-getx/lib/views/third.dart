@@ -17,7 +17,16 @@ class ThirdView extends StatelessWidget {
             ElevatedButton(
               onPressed: () => Get.offAll(HomeView()),
               child: Text("Go To Home View"),
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              child: Text('Go to Previous View'),
+              onPressed: () {
+                Get.back();
+              },
+            ),
           ],
         ),
       ),

@@ -23,11 +23,13 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/second',
           page: () => SecondView(),
+          transition: Transition.leftToRight,
         ),
         GetPage(
           name: '/third',
           page: () => ThirdView(),
-          transition: Transition.zoom,
+          //transition: Transition.zoom,
+          transition: Transition.leftToRight,
         ),
         GetPage(
           name: "/fourth",

@@ -61,6 +61,15 @@ class _SecondViewState extends State<SecondView> {
                 setState(() {});
               },
             ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              child: Text('Go to Previous View'),
+              onPressed: () {
+                Get.back();
+              },
+            ),
           ],
         ),
       ),
