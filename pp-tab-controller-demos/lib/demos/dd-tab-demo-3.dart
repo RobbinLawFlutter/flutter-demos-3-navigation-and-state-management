@@ -1,7 +1,6 @@
 //This app demonstrates the TabPageSelector widget,
 //in conjuntion with the TabController and TabBarView.
 //No TabBar on this app.
-//Also how to pass parms down the stateful widget tree.
 //Also our first use of IconButton Widget, and PreferredSize Widget,
 //and the Card Widget.
 
@@ -88,19 +87,19 @@ class _MyTabbedDemo3State extends State<MyTabbedDemo3>
 }
 
 class Choice {
-  const Choice({this.title, this.icon});
+  Choice({this.title, this.icon});
 
   final String title;
   final IconData icon;
 }
 
-const List<Choice> choices = const <Choice>[
-  const Choice(title: 'CAR', icon: Icons.directions_car),
-  const Choice(title: 'BICYCLE', icon: Icons.directions_bike),
-  const Choice(title: 'BOAT', icon: Icons.directions_boat),
-  const Choice(title: 'BUS', icon: Icons.directions_bus),
-  const Choice(title: 'TRAIN', icon: Icons.directions_railway),
-  const Choice(title: 'WALK', icon: Icons.directions_walk),
+List<Choice> choices = <Choice>[
+  Choice(title: 'CAR', icon: Icons.directions_car),
+  Choice(title: 'BICYCLE', icon: Icons.directions_bike),
+  Choice(title: 'BOAT', icon: Icons.directions_boat),
+  Choice(title: 'BUS', icon: Icons.directions_bus),
+  Choice(title: 'TRAIN', icon: Icons.directions_railway),
+  Choice(title: 'WALK', icon: Icons.directions_walk),
 ];
 
 class ChoiceCard extends StatelessWidget {

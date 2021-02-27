@@ -1,6 +1,5 @@
 //This app demonstrates the DefaultTabController,
 //TabBar, and TabBarView Widgets.
-//Also how to pass parms down the stateful widget tree.
 
 //DefualtTabController, TabBar, and TabBarView Widgets of the week.
 //https://www.youtube.com/watch?v=POtoEH-5l40&vl=en

@@ -7,7 +7,6 @@
 //widgets.
 //It also shows the use of mixins, but we will talk
 //about that later.
-//Also how to pass parms down the stateful widget tree.
 
 //lifecycle explained from flutter community.
 //https://medium.com/flutter-community/flutter-lifecycle-for-android-and-ios-developers-8f532307e0c7
@@ -71,9 +70,10 @@ class _MyTabbedDemo2State extends State<MyTabbedDemo2>
           return Center(
             child: Text(
               'This is the $label tab',
-              //style: const TextStyle(
-              //fontSize: 36,
-              //color: Colors.white,
+              style: TextStyle(
+                fontSize: 40,
+                //color: Colors.white,
+              ),
             ),
           );
         }).toList(),

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       //home: MyTabbedDemo1(),
       //home: MyTabbedDemo2(),
       //home: MyTabbedDemo3(),
-      //home: AlertDialogAndSnackBarDemo(),
+      home: AlertDialogAndSnackBarDemo(),
       theme: ThemeData.dark(),
     );
   }
