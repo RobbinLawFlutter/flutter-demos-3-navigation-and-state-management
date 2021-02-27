@@ -8,7 +8,6 @@ class NumberCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //print('NumberCard build:');
     return Card(
       child: Center(
         child: Stack(

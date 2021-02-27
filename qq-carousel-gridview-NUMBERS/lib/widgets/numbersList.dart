@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:robbinlaw/models/numberModel.dart';
-import 'package:robbinlaw/models/numberTypes.dart';
 import 'package:robbinlaw/controllers/appController.dart';
 import 'package:robbinlaw/widgets/numberCard.dart';
 

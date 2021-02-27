@@ -48,7 +48,23 @@ class _NumbersCarouselState extends State<NumbersCarousel>
               children: mainTypes.map((numberModel) {
                 return GestureDetector(
                   onTap: () {
-                    print('You chose the ${numberModel.title}');
+                    print('You chose the type ${numberModel.type}');
+                    List<NumberModel> numberListType;
+                    switch (numberModel.type) {
+                      case 'ones':
+                        numberListType = oneTypes;
+                        break;
+                      case 'twos':
+                        numberListType = twoTypes;
+                        break;
+                      case 'threes':
+                        numberListType = threeTypes;
+                        break;
+                      default:
+                        throw '${numberModel.title} type not recognized';
+                    }
+                    Get.find<AppController>()
+                        .updateNumberListType(numberListType);
                   },
                   child: NumberCard(
                     numberModel: numberModel,
@@ -68,7 +84,7 @@ class _NumbersCarouselState extends State<NumbersCarousel>
                   child: TabPageSelector(
                     controller: _tabController,
                     selectedColor: Colors.white,
-                    indicatorSize: 20,
+                    indicatorSize: 15,
                   ),
                 ),
               ),

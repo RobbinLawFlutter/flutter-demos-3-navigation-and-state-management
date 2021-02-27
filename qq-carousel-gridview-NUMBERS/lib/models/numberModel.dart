@@ -1,7 +1,7 @@
 class NumberModel {
-  //Constructor
-  NumberModel({this.title, this.image});
-  //Public fields.
+  NumberModel({this.type, this.title, this.image});
+
+  final String type;
   final String title;
   final String image;
 }

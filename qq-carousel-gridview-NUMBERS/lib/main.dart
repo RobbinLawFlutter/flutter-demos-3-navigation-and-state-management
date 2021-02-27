@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:robbinlaw/bindings/globalBindings.dart';
 import 'package:robbinlaw/views/home.dart';
