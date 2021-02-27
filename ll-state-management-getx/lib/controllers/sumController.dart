@@ -28,10 +28,10 @@ class SumController extends GetxController {
       val.count = 0;
     });
 
-    /// Called every time the variable $_ is changed
+    /// Called every time the counterStream is changed
     ever(_counterStream1, (_) => print("_counterStream1 has been changed"));
 
-    /// Called first time the variable $_ is changed
+    /// Called first time the counterStream is changed
     once(_counterStream1, (_) => print("_counterStream1 was changed once"));
 
     /// Called once there has been no action on observable for 1 second
