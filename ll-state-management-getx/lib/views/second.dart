@@ -22,7 +22,7 @@ class SecondView extends StatelessWidget {
               builder: (_) {
                 print('SecondView GetX<CountController> builder: ');
                 return Text(
-                  'Counter #0:   ${_.counter.count}',
+                  'Counter #0:   ${_.counter?.count}',
                 );
               },
             ),

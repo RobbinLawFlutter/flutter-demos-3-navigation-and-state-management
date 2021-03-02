@@ -24,7 +24,7 @@ class HomeView extends StatelessWidget {
               builder: (_) {
                 print('HomeView GetX<CountController> 1 builder: ');
                 return Text(
-                  'Counter #0:    ${_.counter.count}',
+                  'Counter #0:    ${_.counter?.count}',
                 );
               },
             ),

@@ -53,6 +53,6 @@ class CountController extends GetxController {
     _counterModelStream.update((val) {
       val.count++;
     });
-    print('CountController increment: counter.count = ${counter.count}');
+    print('CountController increment: counter.count = ${counter?.count}');
   }
 }
