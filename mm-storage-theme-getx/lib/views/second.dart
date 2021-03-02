@@ -62,6 +62,7 @@ class SecondView extends StatelessWidget {
             RaisedButton(
               child: Text("Store Values"),
               onPressed: () {
+                print('stored values');
                 GetStorage box = GetStorage();
                 box.write("count1", Get.find<SumController>().counter1.count);
                 box.write("count2", Get.find<SumController>().counter2.count);
@@ -70,6 +71,7 @@ class SecondView extends StatelessWidget {
             RaisedButton(
               child: Text("Un Store Values"),
               onPressed: () {
+                print('unstored values');
                 GetStorage box = GetStorage();
                 box.write("count1", null);
                 box.write("count2", null);
