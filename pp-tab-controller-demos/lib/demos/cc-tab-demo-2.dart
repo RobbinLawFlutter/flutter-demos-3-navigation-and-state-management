@@ -26,6 +26,7 @@ class _MyTabbedDemo2State extends State<MyTabbedDemo2>
   final List<Tab> myTabs = <Tab>[
     Tab(text: 'LEFT'),
     Tab(text: 'RIGHT'),
+    Tab(text: 'FUN'),
   ];
 
   TabController _tabController;
