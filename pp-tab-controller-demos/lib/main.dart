@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       //home: MyTabbedDemo1(),
-      home: MyTabbedDemo2(),
-      //home: MyTabbedDemo3(),
+      //home: MyTabbedDemo2(),
+      home: MyTabbedDemo3(),
       //home: AlertDialogAndSnackBarDemo(),
       theme: ThemeData.dark(),
     );
