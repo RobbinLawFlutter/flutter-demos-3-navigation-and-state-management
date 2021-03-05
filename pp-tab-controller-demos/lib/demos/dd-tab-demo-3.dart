@@ -58,7 +58,7 @@ class _MyTabbedDemo3State extends State<MyTabbedDemo3>
             alignment: Alignment.center,
             child: TabPageSelector(
               controller: _tabController,
-              //color: Colors.white,
+              //selectedColor: Colors.white,
               selectedColor: textStyle.color,
             ),
           ),

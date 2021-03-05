@@ -64,7 +64,7 @@ class _AlertDialogSnackBarState extends State<AlertDialogSnackBar> {
                     ),
                   ),
                   actions: [
-                    FlatButton(
+                    ElevatedButton(
                       child: Text(
                         'Cancel',
                         style: TextStyle(
@@ -75,7 +75,7 @@ class _AlertDialogSnackBarState extends State<AlertDialogSnackBar> {
                         Navigator.pop(dialogContext);
                       },
                     ),
-                    FlatButton(
+                    ElevatedButton(
                       child: Text(
                         'Ok',
                         style: TextStyle(
