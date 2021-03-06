@@ -33,6 +33,13 @@ class _AlertDialogSnackBarState extends State<AlertDialogSnackBar> {
     return Container(
       alignment: Alignment.center,
       child: GestureDetector(
+        child: Text(
+          'Press Here',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 30,
+          ),
+        ),
         onTap: () {
           showDialog(
               context: myScaffoldContext,
@@ -104,13 +111,6 @@ class _AlertDialogSnackBarState extends State<AlertDialogSnackBar> {
                 );
               });
         },
-        child: Text(
-          'Press Here',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 30,
-          ),
-        ),
       ),
     );
   }

@@ -36,6 +36,7 @@ class AppController extends GetxController {
   }
 
   void updateNumberListType(List<NumberModel> numberListType) {
+    print('AppController updateNumberListType');
     _appStream.value = numberListType;
     print(
         'AppController updateNumbersListType: stream.value[0].title = ${_appStream.value[0].title}');

@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //home: MyTabbedDemo1(),
       //home: MyTabbedDemo2(),
-      home: MyTabbedDemo3(),
-      //home: AlertDialogAndSnackBarDemo(),
+      //home: MyTabbedDemo3(),
+      home: AlertDialogAndSnackBarDemo(),
       theme: ThemeData.dark(),
     );
   }
