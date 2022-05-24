@@ -1,55 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:robbinlaw/themes/shrinetheme.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:robbinlaw/bindings/globalBindings.dart';
+import 'package:robbinlaw/views/home.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Switch Demo',
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
-      theme: buildShrineTheme(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  List<bool> _values = [true, false, true, false, false];
-
-  Widget build(BuildContext context) {
-    final int count = 4;
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Switch Demo'),
-      ),
-      body: Column(
-        children: <Widget>[
-          for (int i = 0; i <= count; i++)
-            ListTile(
-              title: Text(
-                'Switch $i',
-              ),
-              leading: Switch(
-                value: _values[i],
-                onChanged: i == count
-                    ? null
-                    : (bool value) {
-                        _values[i] = value;
-                        print(_values);
-                        setState(() {});
-                      },
-              ),
-            ),
-        ],
-      ),
-    );
-  }
+void main() async {
+  await GetStorage.init();
+  runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: false,
+    initialBinding: GlobalBindings(),
+    home: HomeView(),
+    theme: ThemeData.dark(),
+    defaultTransition: Transition.upToDown,
+  ));
 }
