@@ -8,7 +8,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("GetX | HomeView"),
+        title: const Text("GetX | HomeView"),
         centerTitle: true,
       ),
       body: Center(
@@ -21,8 +21,8 @@ class HomeView extends StatelessWidget {
                 controller: emailController,
               ),
             ),
-            RaisedButton(
-              child: Text("Validate Email"),
+            ElevatedButton(
+              child: const Text("Validate Email"),
               onPressed: () {
                 if (GetUtils.isEmail(emailController.text)) {
                   Get.snackbar(
@@ -41,20 +41,20 @@ class HomeView extends StatelessWidget {
                 }
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
-            RaisedButton(
-              child: Text('Go to Second View'),
+            ElevatedButton(
+              child: const Text('Go to Second View'),
               onPressed: () {
                 Get.to(SecondView());
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
-            RaisedButton(
-              child: Text("Change Theme"),
+            ElevatedButton(
+              child: const Text("Change Theme"),
               onPressed: () {
                 if (Get.isDarkMode) {
                   Get.changeTheme(ThemeData.light());
