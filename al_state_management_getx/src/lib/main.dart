@@ -1,95 +1,28 @@
-//Proper use of the Scaffold.of
-//https://medium.com/@ksheremet/flutter-showing-snackbar-within-the-widget-that-builds-a-scaffold-3a817635aeb2
+//getx (navigation manager and state manager) documentation from medium
+//https://medium.com/flutter-community/the-flutter-getx-ecosystem-dependency-injection-8e763d0ec6b9
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:robbinlaw/themes/shrinetheme.dart';
+import 'package:get/get.dart';
+import 'package:robbinlaw/bindings/globalBindings.dart';
+import 'package:robbinlaw/views/home.dart';
 
-void main() => runApp(MyApp());
+//don't need 'Get' before Material App if you're only using State Management
+//but we will also use Get for Navigation Management so we will need it.
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'AppBar Button Demo',
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyPage(),
-      theme: buildShrineTheme(),
-    );
-  }
-}
-
-class MyPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('AppBar Button Demo'),
-        actions: [
-          // ElevatedButton(
-          //   onPressed: () {
-          //     final snackBar = SnackBar(
-          //       behavior: SnackBarBehavior.floating,
-          //       content: Row(
-          //         children: [
-          //           Icon(Icons.favorite),
-          //           SizedBox(
-          //             width: 10,
-          //           ),
-          //           Text('Hey There'),
-          //         ],
-          //       ),
-          //       action: SnackBarAction(
-          //         label: 'Click Me',
-          //         onPressed: () {
-          //           print('hey you clicked on the snackbar Action');
-          //         },
-          //       ),
-          //     );
-
-          //     // Find the Scaffold in the widget tree and use
-          //     // it to show a SnackBar.
-          //     Scaffold.of(context).showSnackBar(snackBar);
-          //   },
-          //   //child: Text('Show SnackBar'),
-          //   child: Icon(Icons.favorite),
-          // ),
-          SnackbarButton(),
-        ],
-      ),
-      body: Center(),
-    );
-  }
-}
-
-class SnackbarButton extends StatelessWidget {
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        final snackBar = SnackBar(
-          behavior: SnackBarBehavior.floating,
-          content: Row(
-            children: [
-              Icon(Icons.favorite),
-              SizedBox(
-                width: 10,
-              ),
-              Text('Hey There'),
-            ],
-          ),
-          action: SnackBarAction(
-            label: 'Click Me',
-            onPressed: () {
-              print('hey you clicked on the snackbar Action');
-            },
-          ),
-        );
-
-        // Find the Scaffold in the widget tree and use
-        // it to show a SnackBar.
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-      },
-      //child: Text('Show SnackBar'),
-      child: Icon(Icons.favorite),
+      defaultTransition: Transition.upToDown,
+      //dependency injection via Bindings().
+      initialBinding: GlobalBindings(),
+      home: HomeView(),
+      theme: ThemeData.dark(),
     );
   }
 }
