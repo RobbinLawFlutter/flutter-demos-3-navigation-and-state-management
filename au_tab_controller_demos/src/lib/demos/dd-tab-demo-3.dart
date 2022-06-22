@@ -1,5 +1,5 @@
 //This app demonstrates the TabPageSelector widget,
-//in conjuntion with the TabController and TabBarView.
+//in conjunction with the TabController and TabBarView.
 //No TabBar on this app.
 //Also our first use of IconButton Widget, and PreferredSize Widget,
 //and the Card Widget.
