@@ -21,9 +21,13 @@ class Screen0 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
-              color: Colors.red,
-              child: Text('Go To Screen 1'),
+            ElevatedButton(
+              child: Text(
+                'Go To Screen 1',
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+              ),
               onPressed: () => Screen1.show(
                 context,
                 argsFromCaller: {
@@ -32,9 +36,13 @@ class Screen0 extends StatelessWidget {
                 },
               ),
             ),
-            RaisedButton(
-              color: Colors.blue,
-              child: Text('Go To Screen 2'),
+            ElevatedButton(
+              child: Text(
+                'Go To Screen 2',
+                style: TextStyle(
+                  color: Colors.blue,
+                ),
+              ),
               onPressed: () => Screen2.show(
                 context,
                 argsFromCaller: {

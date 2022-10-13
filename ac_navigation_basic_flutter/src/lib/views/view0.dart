@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:robbinlaw/views/view1.dart';
 import 'package:robbinlaw/views/view2.dart';
@@ -8,15 +10,19 @@ class View0 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        title: Text('View 0'),
+        title: const Text('View 0'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
-              color: Colors.red,
-              child: Text('Go To View 1'),
+            ElevatedButton(
+              child: const Text(
+                'Go To View 1',
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+              ),
               onPressed: () {
                 //Navigate to View 1
                 Navigator.push(
@@ -27,9 +33,13 @@ class View0 extends StatelessWidget {
                 );
               },
             ),
-            RaisedButton(
-              color: Colors.blue,
-              child: Text('Go To View 2'),
+            ElevatedButton(
+              child: const Text(
+                'Go To View 2',
+                style: TextStyle(
+                  color: Colors.blue,
+                ),
+              ),
               onPressed: () {
                 //Navigate to Screen 2
                 Navigator.push(

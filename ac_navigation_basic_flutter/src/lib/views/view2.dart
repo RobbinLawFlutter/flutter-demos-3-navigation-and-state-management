@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:robbinlaw/views/view1.dart';
 
@@ -7,15 +9,19 @@ class View2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('View 2'),
+        title: const Text('View 2'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
-              color: Colors.red,
-              child: Text('Go To View 1'),
+            ElevatedButton(
+              child: const Text(
+                'Go To View 1',
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+              ),
               onPressed: () {
                 //Navigate to Screen 1
                 Navigator.push(
@@ -26,9 +32,13 @@ class View2 extends StatelessWidget {
                 );
               },
             ),
-            RaisedButton(
-              color: Colors.green,
-              child: Text('Go Back'),
+            ElevatedButton(
+              child: const Text(
+                'Go Back',
+                style: TextStyle(
+                  color: Colors.green,
+                ),
+              ),
               onPressed: () {
                 //Navigate back by popping
                 Navigator.pop(context);

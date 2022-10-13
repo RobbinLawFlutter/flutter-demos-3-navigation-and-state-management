@@ -34,9 +34,13 @@ class Screen2 extends StatelessWidget {
             data == null
                 ? Text('no data')
                 : Text('${data['firstname']}, ${data['lastname']}'),
-            RaisedButton(
-              color: Colors.red,
-              child: Text('Go To Screen 1'),
+            ElevatedButton(
+              child: Text(
+                'Go To Screen 1',
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+              ),
               onPressed: () => Screen1.show(
                 context,
                 argsFromCaller: {
@@ -45,9 +49,13 @@ class Screen2 extends StatelessWidget {
                 },
               ),
             ),
-            RaisedButton(
-              color: Colors.green,
-              child: Text('Go Back'),
+            ElevatedButton(
+              child: Text(
+                'Go Back',
+                style: TextStyle(
+                  color: Colors.green,
+                ),
+              ),
               onPressed: () {
                 //Navigate back by popping
                 Navigator.pop(context);
