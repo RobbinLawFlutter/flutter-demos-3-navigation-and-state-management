@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:robbinlaw/views/home.dart';
 
@@ -9,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        primaryColor: Color(0xFF0B1034),
+        primaryColor: const Color(0xFF0B1034),
         scaffoldBackgroundColor: Colors.blueGrey[800],
       ),
       home: Home(),
