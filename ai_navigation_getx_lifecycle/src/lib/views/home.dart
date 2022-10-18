@@ -3,11 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:robbinlaw/views/second.dart';
-
-const kTextStyle = TextStyle(
-  fontSize: 24,
-  color: Colors.white,
-);
+import 'package:robbinlaw/constants.dart';
 
 class HomeView extends StatelessWidget {
   @override
@@ -53,7 +49,7 @@ class HomeView extends StatelessWidget {
             ),
             ElevatedButton(
               child: const Text(
-                "Go To Second View via Get.to",
+                "View2 via Get.to",
                 style: kTextStyle,
               ),
               onPressed: () {
@@ -65,7 +61,7 @@ class HomeView extends StatelessWidget {
             ),
             ElevatedButton(
               child: const Text(
-                "Go To Second View via Get.toNamed",
+                "View2 via Get.toNamed",
                 style: kTextStyle,
               ),
               onPressed: () {

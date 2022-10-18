@@ -11,8 +11,6 @@ import 'package:robbinlaw/views/third.dart';
 import 'package:robbinlaw/views/fourth.dart';
 import 'package:robbinlaw/constants.dart';
 
-
-
 class SecondView extends StatefulWidget {
   @override
   _SecondViewState createState() => _SecondViewState();
@@ -52,17 +50,31 @@ class _SecondViewState extends State<SecondView> {
           children: <Widget>[
             ElevatedButton(
               child: const Text(
-                "Go to Third View but do not remove this view from stack",
+                "View3 via Get.to",
                 style: kTextStyle,
               ),
-              onPressed: () => Get.to(ThirdView()),
+              onPressed: () {
+                Get.to(ThirdView());
+              },
             ),
             const SizedBox(
               height: 20,
             ),
             ElevatedButton(
               child: const Text(
-                "Go to Third View and remove this view from stack",
+                "View3 via Get.toNamed",
+                style: kTextStyle,
+              ),
+              onPressed: () {
+                Get.toNamed("/third");
+              },
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              child: const Text(
+                "View3 remove this view",
                 style: kTextStyle,
               ),
               onPressed: () => Get.off(ThirdView()),
@@ -72,7 +84,7 @@ class _SecondViewState extends State<SecondView> {
             ),
             ElevatedButton(
               child: const Text(
-                "Go To Third View and remove everything from stack",
+                "View3 remove all views",
                 style: kTextStyle,
               ),
               onPressed: () => Get.offAll(ThirdView()),
@@ -82,12 +94,11 @@ class _SecondViewState extends State<SecondView> {
             ),
             ElevatedButton(
               child: const Text(
-                "Go to Fourth View via Get.to with parameter",
+                "View4 via Get.to with parm",
                 style: kTextStyle,
               ),
               onPressed: () {
-                Get.to(FourthView(),
-                    arguments: "Passed From Second View via Get.to");
+                Get.to(FourthView(), arguments: "View2 parm via Get.to");
               },
             ),
             const SizedBox(
@@ -95,12 +106,11 @@ class _SecondViewState extends State<SecondView> {
             ),
             ElevatedButton(
               child: const Text(
-                "Go to Fourth View via Get.toNamed with parameter",
+                "View4 via Get.toNamed w/parm",
                 style: kTextStyle,
               ),
               onPressed: () {
-                Get.toNamed("/fourth",
-                    arguments: "Passed From Second View via Get.toNamed");
+                Get.toNamed("/fourth", arguments: "View2 parm via Get.toNamed");
               },
             ),
             const SizedBox(
