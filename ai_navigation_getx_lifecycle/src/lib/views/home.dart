@@ -1,13 +1,20 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:robbinlaw/views/second.dart';
+
+const kTextStyle = TextStyle(
+  fontSize: 24,
+  color: Colors.white,
+);
 
 class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("GetX | Home View"),
+        title: const Text("GetX | Home View"),
         centerTitle: true,
       ),
       body: Center(
@@ -15,28 +22,52 @@ class HomeView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              child: Text("Show Snackbar"),
+              child: const Text(
+                "Show Snackbar",
+                style: kTextStyle,
+              ),
               onPressed: _showSnackBar,
             ),
+            const SizedBox(
+              height: 20,
+            ),
             ElevatedButton(
-              child: Text("Show Dialog"),
+              child: const Text(
+                "Show Dialog",
+                style: kTextStyle,
+              ),
               onPressed: _showDialog,
             ),
+            const SizedBox(
+              height: 20,
+            ),
             ElevatedButton(
-              child: Text("Show Bottom Sheet"),
+              child: const Text(
+                "Show Bottom Sheet",
+                style: kTextStyle,
+              ),
               onPressed: _showBottomSheet,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             ElevatedButton(
-              child: Text("Go To Second View via Get.to"),
+              child: const Text(
+                "Go To Second View via Get.to",
+                style: kTextStyle,
+              ),
               onPressed: () {
                 Get.to(SecondView());
               },
             ),
+            const SizedBox(
+              height: 20,
+            ),
             ElevatedButton(
-              child: Text("Go To Second View via Get.toNamed"),
+              child: const Text(
+                "Go To Second View via Get.toNamed",
+                style: kTextStyle,
+              ),
               onPressed: () {
                 Get.toNamed("/second");
               },
@@ -58,30 +89,28 @@ class HomeView extends StatelessWidget {
   _showDialog() {
     Get.defaultDialog(
       title: "Simple Dialog",
-      content: Text("Too Easy"),
+      content: const Text("Too Easy"),
     );
   }
 
   _showBottomSheet() {
     Get.bottomSheet(
-      Container(
-        child: Wrap(
-          children: <Widget>[
-            ListTile(
-              leading: Icon(Icons.music_note),
-              title: Text('Music'),
-              onTap: () => {},
-            ),
-            ListTile(
-              leading: Icon(Icons.videocam),
-              title: Text('Video'),
-              onTap: () => {},
-            ),
-            SizedBox(
-              height: 100,
-            ),
-          ],
-        ),
+      Wrap(
+        children: <Widget>[
+          ListTile(
+            leading: const Icon(Icons.music_note),
+            title: const Text('Music'),
+            onTap: () => {},
+          ),
+          ListTile(
+            leading: const Icon(Icons.videocam),
+            title: const Text('Video'),
+            onTap: () => {},
+          ),
+          const SizedBox(
+            height: 100,
+          ),
+        ],
       ),
       //backgroundColor: Colors.white,
     );
