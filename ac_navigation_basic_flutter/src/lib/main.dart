@@ -4,6 +4,8 @@
 //Push and Pop from flutter community.
 //https://medium.com/flutter-community/flutter-push-pop-push-1bb718b13c31
 
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:robbinlaw/views/view0.dart';
 

@@ -17,10 +17,14 @@ class View0 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.grey,
+              ),
               child: const Text(
                 'Go To View 1',
                 style: TextStyle(
                   color: Colors.red,
+                  fontSize: 48,
                 ),
               ),
               onPressed: () {
@@ -33,11 +37,18 @@ class View0 extends StatelessWidget {
                 );
               },
             ),
+            const SizedBox(
+              height: 15,
+            ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.grey,
+              ),
               child: const Text(
                 'Go To View 2',
                 style: TextStyle(
                   color: Colors.blue,
+                  fontSize: 48,
                 ),
               ),
               onPressed: () {
