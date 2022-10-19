@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:math';
 
 class Calculator {
@@ -9,6 +11,7 @@ class Calculator {
 
   String calculateBMI() {
     _bmi = weight / pow(height / 100, 2);
+    print(_bmi);
     return _bmi.toStringAsFixed(1);
   }
 }
