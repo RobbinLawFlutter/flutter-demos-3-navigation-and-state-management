@@ -9,3 +9,9 @@
 - [GetX Other Features by Tadas Petra](https://www.youtube.com/watch?v=ttQtlX_Q0eU&list=RDLVCNpXbeI_slw&index=2) runtime 12 min
 
 ---
+### Docs
+
+- [Declaring a Reactive Variable in GetX by Jonny Borges](https://github.com/jonataslaw/getx/blob/master/documentation/en_US/state_management.md)
+- [GetX docs on pub.dev](https://pub.dev/packages/get)
+
+---
