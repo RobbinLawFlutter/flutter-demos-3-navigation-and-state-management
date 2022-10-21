@@ -1,17 +1,17 @@
 {
-	"cSpell.ignoreWords": [
-		"firstname"
-	],
+	"cSpell.ignoreWords": ["firstname"],
 	"cSpell.words": [
 		"Brunhage",
 		"debouce",
 		"geekforgeeks",
 		"Getx",
+		"gridview",
 		"lastname",
 		"Lifecyle",
 		"notdeterminedyet",
 		"robbinlaw",
 		"Statefull",
-		"videocam"
+		"videocam",
+		"vsync"
 	]
 }

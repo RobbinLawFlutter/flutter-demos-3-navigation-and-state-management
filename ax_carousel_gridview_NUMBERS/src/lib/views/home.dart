@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:robbinlaw/models/numberTypes.dart';
@@ -11,10 +13,10 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('NUMBERS Demo'),
+        title: const Text('NUMBERS Demo'),
         actions: [
           PopupMenuButton(
-            icon: Icon(Icons.more_vert),
+            icon: const Icon(Icons.more_vert),
             itemBuilder: (BuildContext context) => <PopupMenuEntry>[
               const PopupMenuItem(
                   value: 1, child: Text('Show ones in gridview')),

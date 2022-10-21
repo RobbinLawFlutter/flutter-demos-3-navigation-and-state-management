@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:get/state_manager.dart';
 import 'package:robbinlaw/models/numberModel.dart';
 import 'package:robbinlaw/models/numberTypes.dart';
