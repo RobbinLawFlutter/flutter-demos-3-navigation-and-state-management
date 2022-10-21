@@ -4,6 +4,11 @@
 //Dart getters and setters by dart.dev.
 //https://dart.dev/guides/language/language-tour#getters-and-setters
 
+//GetX docs on pub.dev
+//https://pub.dev/packages/get
+
+// ignore_for_file: file_names, avoid_print
+
 import 'package:get/state_manager.dart';
 import 'package:robbinlaw/models/count.dart';
 

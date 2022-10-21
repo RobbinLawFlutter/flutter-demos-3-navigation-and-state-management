@@ -1,17 +1,20 @@
+// ignore_for_file: avoid_print, file_names
+
 import 'package:get/state_manager.dart';
 import 'package:robbinlaw/models/count.dart';
 
 class SumController extends GetxController {
-  Rx<CounterModel> _counterStream1 = Rx<CounterModel>(CounterModel(count: 0));
+  final Rx<CounterModel> _counterStream1 = Rx<CounterModel>(CounterModel(count: 0));
+
   CounterModel get counter1 => _counterStream1.value;
   set counter1(CounterModel value) => _counterStream1.value = value;
-  Rx<CounterModel> _counterStream2 = Rx<CounterModel>(CounterModel(count: 0));
+
+  final Rx<CounterModel> _counterStream2 = Rx<CounterModel>(CounterModel(count: 0));
+
   CounterModel get counter2 => _counterStream2.value;
   set counter2(CounterModel value) => _counterStream2.value = value;
+  
   int get sum {
-    if (counter1 == null || counter2 == null)
-      return 0;
-    else
       return counter1.count + counter2.count;
   }
 
@@ -35,25 +38,27 @@ class SumController extends GetxController {
     once(_counterStream1, (_) => print("_counterStream1 was changed once"));
 
     /// Called once there has been no action on observable for 1 second
-    debounce(_counterStream1, (_) => print("debouce _counterStream1"),
-        time: Duration(seconds: 1));
+    debounce(_counterStream1, (_) => print("debounce _counterStream1"),
+        time: const Duration(seconds: 1));
 
     /// Only reads the observable every 1 second
     interval(_counterStream1, (_) => print("interval _counterStream1"),
-        time: Duration(seconds: 1));
+        time: const Duration(seconds: 1));
   }
 
+  // called after the widget is rendered on screen
   @override
   void onReady() {
     print(
-        'SumController onReady:'); // called after the widget is rendered on screen
+        'SumController onReady:');
     super.onReady();
   }
 
+  // called just before the Controller is deleted
   @override
   void onClose() {
     print(
-        'SumController onClose:'); // called just before the Controller is deleted
+        'SumController onClose:');
     super.onClose();
   }
 

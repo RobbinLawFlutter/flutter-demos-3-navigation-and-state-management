@@ -1,8 +1,11 @@
+// ignore_for_file: avoid_print, file_names
+
 import 'package:get/get.dart';
 import 'package:robbinlaw/models/user.dart';
 
 class UserController extends GetxController {
   final Rx<UserModel> _userStream = Rx<UserModel>(UserModel(name: "", count: 0));
+  
   UserModel get user => _userStream.value;
   set user(UserModel value) => _userStream.value = value;
 

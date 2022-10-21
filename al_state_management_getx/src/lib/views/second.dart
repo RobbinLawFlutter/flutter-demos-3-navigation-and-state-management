@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:robbinlaw/controllers/countController.dart';
@@ -10,7 +12,7 @@ class SecondView extends StatelessWidget {
     print('SecondView build');
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second View"),
+        title: const Text("Second View"),
         centerTitle: true,
       ),
       body: Center(
@@ -26,16 +28,16 @@ class SecondView extends StatelessWidget {
                 );
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             ElevatedButton(
-              child: Text("Increment Counter"),
+              child: const Text("Increment Counter"),
               onPressed: () {
                 Get.find<CountController>().increment();
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             GetX<UserController>(
@@ -49,28 +51,28 @@ class SecondView extends StatelessWidget {
                 ]);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             ElevatedButton(
-              child: Text("Update User Name & Count"),
+              child: const Text("Update User Name & Count"),
               onPressed: () {
                 Get.find<UserController>().updateUser(
                     name: 'Second View User Name',
                     count: Get.find<CountController>().counter.count);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             ElevatedButton(
-              child: Text('Go to Third View'),
+              child: const Text('Go to Third View'),
               onPressed: () {
                 Get.to(ThirdView());
               },
             ),
             ElevatedButton(
-              child: Text('Go to Previous View'),
+              child: const Text('Go to Previous View'),
               onPressed: () {
                 Get.back();
               },

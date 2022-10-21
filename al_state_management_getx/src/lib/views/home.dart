@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:robbinlaw/controllers/countController.dart';
@@ -12,7 +14,7 @@ class HomeView extends StatelessWidget {
     print('HomeView build');
     return Scaffold(
       appBar: AppBar(
-        title: Text("GetX | Home View"),
+        title: const Text("GetX | Home View"),
         centerTitle: true,
       ),
       body: Center(
@@ -28,16 +30,16 @@ class HomeView extends StatelessWidget {
                 );
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             ElevatedButton(
-              child: Text("Increment Counter"),
+              child: const Text("Increment Counter"),
               onPressed: () {
                 Get.find<CountController>().increment();
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             GetX<UserController>(
@@ -51,27 +53,27 @@ class HomeView extends StatelessWidget {
                 ]);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             ElevatedButton(
-              child: Text("Update User Name & Count"),
+              child: const Text("Update User Name & Count"),
               onPressed: () {
                 Get.find<UserController>().updateUser(
                     name: 'Home View User Name',
                     count: Get.find<CountController>().counter.count);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             ElevatedButton(
-              child: Text('Go to Second View'),
+              child: const Text('Go to Second View'),
               onPressed: () {
                 Get.to(SecondView());
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             GetX<SumController>(
@@ -83,11 +85,11 @@ class HomeView extends StatelessWidget {
                 ]);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             ElevatedButton(
-              child: Text('Go to Third View'),
+              child: const Text('Go to Third View'),
               onPressed: () {
                 Get.to(ThirdView());
               },
