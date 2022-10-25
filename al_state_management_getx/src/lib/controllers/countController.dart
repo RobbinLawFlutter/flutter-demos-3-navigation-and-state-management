@@ -4,6 +4,9 @@
 //Dart getters and setters by dart.dev.
 //https://dart.dev/guides/language/language-tour#getters-and-setters
 
+//Streams by the flutter team.
+//https://www.youtube.com/watch?v=nQBpOIHE4eE
+
 //GetX docs on pub.dev
 //https://pub.dev/packages/get
 

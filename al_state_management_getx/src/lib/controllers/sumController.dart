@@ -4,18 +4,20 @@ import 'package:get/state_manager.dart';
 import 'package:robbinlaw/models/count.dart';
 
 class SumController extends GetxController {
-  final Rx<CounterModel> _counterStream1 = Rx<CounterModel>(CounterModel(count: 0));
+  final Rx<CounterModel> _counterStream1 =
+      Rx<CounterModel>(CounterModel(count: 0));
 
   CounterModel get counter1 => _counterStream1.value;
   set counter1(CounterModel value) => _counterStream1.value = value;
 
-  final Rx<CounterModel> _counterStream2 = Rx<CounterModel>(CounterModel(count: 0));
+  final Rx<CounterModel> _counterStream2 =
+      Rx<CounterModel>(CounterModel(count: 0));
 
   CounterModel get counter2 => _counterStream2.value;
   set counter2(CounterModel value) => _counterStream2.value = value;
-  
+
   int get sum {
-      return counter1.count + counter2.count;
+    return counter1.count + counter2.count;
   }
 
   @override
@@ -39,26 +41,24 @@ class SumController extends GetxController {
 
     /// Called once there has been no action on observable for 1 second
     debounce(_counterStream1, (_) => print("debounce _counterStream1"),
-        time: const Duration(seconds: 1));
+        time: const Duration(seconds: 3));
 
     /// Only reads the observable every 1 second
     interval(_counterStream1, (_) => print("interval _counterStream1"),
-        time: const Duration(seconds: 1));
+        time: const Duration(seconds: 3));
   }
 
   // called after the widget is rendered on screen
   @override
   void onReady() {
-    print(
-        'SumController onReady:');
+    print('SumController onReady:');
     super.onReady();
   }
 
   // called just before the Controller is deleted
   @override
   void onClose() {
-    print(
-        'SumController onClose:');
+    print('SumController onClose:');
     super.onClose();
   }
 
