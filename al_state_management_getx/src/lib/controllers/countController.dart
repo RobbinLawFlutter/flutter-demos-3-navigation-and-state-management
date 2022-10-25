@@ -24,10 +24,10 @@ class CountController extends GetxController {
   onInit() {
     super.onInit();
     print('CountController onInit:');
-    _counterModelStream.value = CounterModel(count: 0);
-    _counterModelStream.update((val) {
-      val!.count = 0;
-    });
+    //_counterModelStream.value = CounterModel(count: 0);
+    //_counterModelStream.update((val) {
+    //  val!.count = 0;
+    //});
 
     //Called every time the stream is changed
     ever(_counterModelStream,
