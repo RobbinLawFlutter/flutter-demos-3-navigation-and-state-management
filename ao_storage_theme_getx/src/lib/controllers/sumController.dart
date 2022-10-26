@@ -1,18 +1,17 @@
+// ignore_for_file: avoid_print
+
 import 'package:get/state_manager.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:robbinlaw/models/count.dart';
 
 class SumController extends GetxController {
-  Rx<CounterModel> _counterStream1 = Rx<CounterModel>(CounterModel(count: 0));
+  final Rx<CounterModel> _counterStream1 = Rx<CounterModel>(CounterModel(count: 0));
   CounterModel get counter1 => _counterStream1.value;
   set counter1(CounterModel value) => _counterStream1.value = value;
-  Rx<CounterModel> _counterStream2 = Rx<CounterModel>(CounterModel(count: 0));
+  final Rx<CounterModel> _counterStream2 = Rx<CounterModel>(CounterModel(count: 0));
   CounterModel get counter2 => _counterStream2.value;
   set counter2(CounterModel value) => _counterStream2.value = value;
   int get sum {
-    if (counter1 == null || counter2 == null)
-      return 0;
-    else
       return counter1.count + counter2.count;
   }
 
@@ -23,7 +22,7 @@ class SumController extends GetxController {
 
     GetStorage box = GetStorage();
 
-    _counterStream1.value = CounterModel(count: 0);
+    //_counterStream1.value = CounterModel(count: 0);
     _counterStream1.update((val) {
       if (box.read("count1") != null) {
         val!.count = box.read("count1");
@@ -32,7 +31,7 @@ class SumController extends GetxController {
       }
     });
 
-    _counterStream2.value = CounterModel(count: 0);
+    //_counterStream2.value = CounterModel(count: 0);
     _counterStream2.update((val) {
       if (box.read("count2") != null) {
         val!.count = box.read("count2");

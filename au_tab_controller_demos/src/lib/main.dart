@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -16,10 +18,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      //home: MyTabbedDemo1(),
+      home: MyTabbedDemo1(),
       //home: MyTabbedDemo2(),
       //home: MyTabbedDemo3(),
-      home: AlertDialogAndSnackBarDemo(),
+      //home: AlertDialogAndSnackBarDemo(),
       theme: ThemeData.dark(),
     );
   }

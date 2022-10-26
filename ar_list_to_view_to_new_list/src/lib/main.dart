@@ -4,6 +4,8 @@
 //Iterables
 //https://dart.dev/codelabs/iterables
 
+// ignore_for_file: avoid_print, avoid_function_literals_in_foreach_calls
+
 class Person {
   Person(this.firstName, this.lastName, this.age);
 

@@ -1,8 +1,10 @@
 //This app demonstrates the DefaultTabController,
 //TabBar, and TabBarView Widgets.
 
-//DefualtTabController, TabBar, and TabBarView Widgets of the week.
+//DefaultTabController, TabBar with Tabs, and TabBarView Widgets of the week.
 //https://www.youtube.com/watch?v=POtoEH-5l40&vl=en
+
+// ignore_for_file: file_names, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 
@@ -20,8 +22,8 @@ class _MyTabbedDemo1State extends State<MyTabbedDemo1> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Tab Demo 1'),
-          bottom: TabBar(
+          title: const Text('Tab Demo 1'),
+          bottom: const TabBar(
             //The tabs property must be a list<Tab>.
             tabs: [
               Tab(text: "Car"),
@@ -35,7 +37,7 @@ class _MyTabbedDemo1State extends State<MyTabbedDemo1> {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           //However many list elements are in the TabBar
           //you must have exactly the same amount in the TabBarView.
           children: [
