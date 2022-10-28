@@ -17,7 +17,7 @@
 //What are mixins by the flutter community.
 //https://medium.com/flutter-community/dart-what-are-mixins-3a72344011f3
 
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, file_names
 
 import 'package:flutter/material.dart';
 
@@ -63,7 +63,7 @@ class _MyTabbedDemo2State extends State<MyTabbedDemo2>
           tabs: myTabs.map((e) {
             return Text(
               e.text!,
-              style: const TextStyle(fontSize: 36),
+              style: const TextStyle(fontSize: 20),
             );
           }).toList(),
         ),
@@ -77,7 +77,7 @@ class _MyTabbedDemo2State extends State<MyTabbedDemo2>
             child: Text(
               'This is the $label tab',
               style: const TextStyle(
-                fontSize: 40,
+                fontSize: 30,
                 //color: Colors.white,
               ),
             ),

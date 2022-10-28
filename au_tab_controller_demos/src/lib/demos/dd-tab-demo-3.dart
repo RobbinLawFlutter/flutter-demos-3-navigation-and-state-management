@@ -4,7 +4,7 @@
 //Also our first use of IconButton Widget, and PreferredSize Widget,
 //and the Card Widget.
 
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, file_names
 
 import 'package:flutter/material.dart';
 
@@ -54,7 +54,7 @@ class _MyTabbedDemo3State extends State<MyTabbedDemo3>
         ],
         //the bottom property only accepts PreferredSizeWidget types.
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(48.0),
+          preferredSize: const Size.fromHeight(28.0),
           child: Container(
             height: 48.0,
             alignment: Alignment.center,
