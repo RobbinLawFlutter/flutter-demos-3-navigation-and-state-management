@@ -14,6 +14,11 @@
 //Why not to use the DefaultTabController by medium
 //https://medium.com/flutterworld/flutter-tabbar-and-tricks-4f36e06025a4
 
+//What are mixins by the flutter community.
+//https://medium.com/flutter-community/dart-what-are-mixins-3a72344011f3
+
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
 class MyTabbedDemo2 extends StatefulWidget {
@@ -51,7 +56,7 @@ class _MyTabbedDemo2State extends State<MyTabbedDemo2>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tab Demo 2'),
+        title: const Text('Tab Demo 2'),
         bottom: TabBar(
           //This TabBar uses the TabController.
           controller: _tabController,

@@ -4,6 +4,8 @@
 //Also our first use of IconButton Widget, and PreferredSize Widget,
 //and the Card Widget.
 
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
 class MyTabbedDemo3 extends StatefulWidget {
@@ -18,7 +20,7 @@ class _MyTabbedDemo3State extends State<MyTabbedDemo3>
   @override
   void initState() {
     super.initState();
-    //Instatiate a TabController.
+    //Instantiate a TabController.
     _tabController = TabController(vsync: this, length: choices.length);
   }
 

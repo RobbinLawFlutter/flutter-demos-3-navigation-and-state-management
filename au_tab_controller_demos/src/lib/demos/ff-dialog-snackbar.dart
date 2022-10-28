@@ -4,6 +4,8 @@
 //SnackBar Widget of the Week
 //https://www.youtube.com/watch?v=zpO6n_oZWw0
 
+// ignore_for_file: file_names, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
 class AlertDialogAndSnackBarDemo extends StatelessWidget {
@@ -42,74 +44,76 @@ class _AlertDialogSnackBarState extends State<AlertDialogSnackBar> {
         ),
         onTap: () {
           showDialog(
-              context: myScaffoldContext,
-              builder: (BuildContext dialogContext) {
-                return AlertDialog(
-                  title: const Text(
-                    'AlertDialog Text',
+            context: myScaffoldContext,
+            builder: (BuildContext dialogContext) {
+              return AlertDialog(
+                title: const Text(
+                  'AlertDialog Text',
+                ),
+                content: DecoratedBox(
+                  decoration: const BoxDecoration(
+                    color: Colors.blueGrey,
                   ),
-                  content: DecoratedBox(
-                    decoration: const BoxDecoration(
-                      color: Colors.blueGrey,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
-                                'Some Text',
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  actions: [
-                    ElevatedButton(
-                      child: const Text(
-                        'Cancel',
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.pop(dialogContext);
-                      },
-                    ),
-                    ElevatedButton(
-                      child: const Text(
-                        'Ok',
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.pop(dialogContext);
-                        const snackBar = SnackBar(
-                          content: Text(
-                            'Snack Bar',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              'Some Text',
                             ),
-                          ),
-                          backgroundColor: Colors.white,
-                          duration: Duration(
-                            seconds: 2,
-                          ),
-                        );
-                        ScaffoldMessenger.of(myScaffoldContext).showSnackBar(snackBar);
-                      },
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                actions: [
+                  ElevatedButton(
+                    child: const Text(
+                      'Cancel',
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
                     ),
-                  ],
-                );
-              });
+                    onPressed: () {
+                      Navigator.pop(dialogContext);
+                    },
+                  ),
+                  ElevatedButton(
+                    child: const Text(
+                      'Ok',
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pop(dialogContext);
+                      const snackBar = SnackBar(
+                        content: Text(
+                          'Snack Bar',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                          ),
+                        ),
+                        backgroundColor: Colors.white,
+                        duration: Duration(
+                          seconds: 2,
+                        ),
+                      );
+                      ScaffoldMessenger.of(myScaffoldContext)
+                          .showSnackBar(snackBar);
+                    },
+                  ),
+                ],
+              );
+            },
+          );
         },
       ),
     );
