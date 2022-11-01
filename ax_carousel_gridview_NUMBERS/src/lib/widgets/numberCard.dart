@@ -29,7 +29,8 @@ class NumberCard extends StatelessWidget {
                     color: Colors.black45,
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
-                  padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 4),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 0, horizontal: 4),
                   child: Text(
                     numberModel.title,
                     style: const TextStyle(
